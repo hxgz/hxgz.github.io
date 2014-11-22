@@ -1,0 +1,1327 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>Atom Feed</title>
+    
+	
+	<meta name="author" content="zifeiwo">
+	
+	<link rel="stylesheet" href="/assets/themes/Snail/css/jquery.fancybox.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/main.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/pages/journal.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/team.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/static.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/style.css">
+	<link rel="stylesheet" href="/assets/css/style.css">
+	
+	<link rel="stylesheet" href="/assets/themes/Snail/css/errors.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/google-code-prettify/prettify.css">
+	
+	<link rel="shortcut icon" href="/assets/themes/Snail/img/favicon.ico">
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/auto_loadmore.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/google-code-prettify/prettify.js"></script>
+	
+	<script type="text/javascript">
+	  $(function(){
+		$("pre code").addClass("prettyprint linenums");
+		prettyPrint();
+	  });
+$(document).ready(function () {
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    });
+
+    $('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
+});
+
+	</script>
+	
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+</head>
+<body>
+	<noscript>
+		&amp;lt;div id="no-js"&amp;gt;Please enable JavaScript in your browser to experience / fully&amp;lt;/div&amp;gt;
+	</noscript>
+    <div id="page-container">
+	<div class="nav"> 
+			<nav>
+	<div id="nav-c">
+		<ul id="nav-list">
+			<li id="home"><a href="/">Home</a></li>
+			
+			
+			
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "About"><a href="/about/">About</a></li>
+					
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Archive"><a href="/archive.html">Archive</a></li>
+					
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Categories"><a href="/categories.html">Categories</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Tags"><a href="/tags.html">Tags</a></li>
+					
+				  
+				
+			 
+			
+			
+		</ul>
+		<form id="nav-search" method="GET" action="/search.html">
+			<div id="search-right-pix">
+				<div id="search-left-pix">
+					<div id="search-center-pix">
+						<div id="search-icon-pix"></div>
+						<input name="query" type="text" placeholder="Search">
+					</div>
+				</div>
+			</div>
+		</form>
+		
+		
+	</div>
+</nav>
+
+	</div>
+		<div  class="content">
+			<div id="page-content">
+				<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>子非我</title>
+ <link href="http://www.zifeiwo.com/" rel="self"/>
+ <link href="http://www.zifeiwo.com"/>
+ <updated>2014-11-22T15:58:22+08:00</updated>
+ <id>http://www.zifeiwo.com</id>
+ <author>
+   <name>zifeiwo</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>emacs配置文件</title>
+   <link href="http://www.zifeiwo.com/emacs/2014/10/25/emacs_config"/>
+   <updated>2014-10-25T09:25:00+08:00</updated>
+   <id>http://www.zifeiwo.com/emacs/2014/10/25/emacs_config</id>
+   <content type="html">&lt;div id=&quot;table-of-contents&quot;&gt;
+&lt;h2&gt;&amp;#30446;&amp;#24405;&lt;/h2&gt;
+&lt;div id=&quot;text-table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1&quot;&gt;程序语言配置&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1-1&quot;&gt;python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1-2&quot;&gt;c/c++&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1-3&quot;&gt;go&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-sec-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;程序语言配置&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+&lt;/div&gt;&lt;div id=&quot;outline-container-sec-1-1&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-1&quot;&gt;python&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-1&quot;&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;需要:rope jedi ropemacs flake flymake-cursor.el
+&lt;/li&gt;
+
+&lt;li&gt;参考: &lt;a href=&quot;http://blog.csdn.net/mikelearnscode/article/details/23022277&quot;&gt;http://blog.csdn.net/mikelearnscode/article/details/23022277&lt;/a&gt;
+&lt;/li&gt;
+
+&lt;li&gt;elpy 文档: &lt;a href=&quot;https://media.readthedocs.org/pdf/elpy/latest/elpy.pdf&quot;&gt;https://media.readthedocs.org/pdf/elpy/latest/elpy.pdf&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-1-2&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-2&quot;&gt;c/c++&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-2&quot;&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;需要:cscope
+&lt;/li&gt;
+&lt;li&gt;.emacs
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+
+&lt;pre class=&quot;src src-lisp&quot;&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(defun&lt;/span&gt; &lt;span style=&quot;color: #d55e00;&quot;&gt;my:ac-c-headers-init&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;()&lt;/span&gt;
+  &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(require&lt;/span&gt; &#39;&lt;span style=&quot;color: #d55e00; font-weight: bold;&quot;&gt;auto-complete-c-headers&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;add-to-list &#39;ac-sources &#39;ac-source-c-headers&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;add-hook &#39;c++-mode-hook &#39;my:ac-c-headers-init&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;add-hook &#39;c-mode-hook &#39;my:ac-c-headers-init&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;;&lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;&amp;#35821;&amp;#27861;&amp;#35299;&amp;#37322;&amp;#22120; ac-clang-syntax-check&amp;#21487;&amp;#20570;&amp;#35821;&amp;#27861;&amp;#26816;&amp;#26597;&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;add-to-list &#39;load-path &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;/home/eric/.emacs.d/elpa/auto-complete-clang-async&quot;&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(require&lt;/span&gt; &#39;&lt;span style=&quot;color: #d55e00; font-weight: bold;&quot;&gt;auto-complete-clang-async&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(defun&lt;/span&gt; &lt;span style=&quot;color: #d55e00;&quot;&gt;ac-cc-mode-setup&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;()&lt;/span&gt;
+  &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;setq ac-clang-complete-executable &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;/home/eric/.emacs.d/elpa/auto-complete-clang-async/clang-complete&quot;&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;setq ac-sources &#39;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;ac-source-clang-async&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+  &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;ac-clang-launch-completion-process&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(defun&lt;/span&gt; &lt;span style=&quot;color: #d55e00;&quot;&gt;my-ac-config&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;()&lt;/span&gt;
+  &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;add-hook &#39;c-mode-common-hook &#39;ac-cc-mode-setup&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;add-hook &#39;auto-complete-mode-hook &#39;ac-common-setup&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;global-auto-complete-mode t&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;my-ac-config&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;;&lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;cscope&lt;/span&gt;
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;;&lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;&amp;#20248;&amp;#21270; http://blog.csdn.net/intrepyd/article/details/4202312&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(require&lt;/span&gt; &#39;&lt;span style=&quot;color: #d55e00; font-weight: bold;&quot;&gt;xcscope&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;;&lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;c/c++&amp;#20195;&amp;#30721;&amp;#39118;&amp;#26684; google-c-syle&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(require&lt;/span&gt; &#39;&lt;span style=&quot;color: #d55e00; font-weight: bold;&quot;&gt;google-c-style&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;add-hook &#39;c-mode-common-hook &#39;google-set-c-style&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;add-hook &#39;c-mode-common-hook &#39;google-make-newline-indent&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(defun&lt;/span&gt; &lt;span style=&quot;color: #d55e00;&quot;&gt;my-c-mode-hook&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;()&lt;/span&gt;
+  &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;setq c-basic-offset 4          &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;&amp;#22522;&amp;#26412;&amp;#32553;&amp;#36827;&amp;#23485;&amp;#24230;&lt;/span&gt;
+        indent-tabs-mode t        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;&amp;#31105;&amp;#27490;&amp;#31354;&amp;#26684;&amp;#26367;&amp;#25442;Tab&lt;/span&gt;
+        default-tab-width 4&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;     &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;&amp;#40664;&amp;#35748;Tab&amp;#23485;&amp;#24230;&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;add-hook &#39;c-mode-hook &#39;my-c-mode-hook&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;add-hook &#39;c++-mode-hook &#39;my-c-mode-hook&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(defun&lt;/span&gt; &lt;span style=&quot;color: #d55e00;&quot;&gt;my-c++-mode-hook&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;()&lt;/span&gt;
+  &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;setq c-basic-offset 4&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;c-set-offset &#39;substatement-open 0&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;add-hook &#39;c++-mode-hook &#39;my-c++-mode-hook&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-sec-1-3&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-3&quot;&gt;go&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-3&quot;&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;.emacs
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+
+&lt;pre class=&quot;src src-lisp&quot;&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;;&lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;go lang&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(require&lt;/span&gt; &#39;&lt;span style=&quot;color: #d55e00; font-weight: bold;&quot;&gt;go-mode-load&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(require&lt;/span&gt; &#39;&lt;span style=&quot;color: #d55e00; font-weight: bold;&quot;&gt;go-autocomplete&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(require&lt;/span&gt; &#39;&lt;span style=&quot;color: #d55e00; font-weight: bold;&quot;&gt;go-eldoc&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;add-hook &#39;go-mode-hook &#39;go-eldoc-setup&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;speedbar&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;add-hook
+&#39;go-mode-hook
+&#39;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(lambda&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;()&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;add-hook &#39;before-save-hook &#39;gofmt-before-save&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(if&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;not &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;string-match &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;go&quot;&lt;/span&gt; compile-command&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+       &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;set &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;make-local-variable &#39;compile-command&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+            &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;go build -v&quot;&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+   &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;gocode&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;auto-complete-mode 1&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;setq ac-sources &#39;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;ac-source-go&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+   &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;Imenu &amp;amp; Speedbar&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;setq imenu-generic-expression
+         &#39;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;((&lt;/span&gt;&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;type&quot;&lt;/span&gt; &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;^type *\\([&lt;/span&gt;&lt;span style=&quot;color: #848ea9;&quot;&gt;^&lt;/span&gt;&lt;span style=&quot;color: #848ea9;&quot;&gt; \t\n\r\f]*\\)&quot;&lt;/span&gt; 1&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+           &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;func&quot;&lt;/span&gt; &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;^func *\\(.*\\) {&quot;&lt;/span&gt; 1&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)))&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;imenu-add-to-menubar &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;Index&quot;&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+   &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;Outline mode&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;make-local-variable &#39;outline-regexp&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;setq outline-regexp &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;//\\.\\|//[&lt;/span&gt;&lt;span style=&quot;color: #848ea9;&quot;&gt;^&lt;/span&gt;&lt;span style=&quot;color: #848ea9;&quot;&gt;\r\n\f][&lt;/span&gt;&lt;span style=&quot;color: #848ea9;&quot;&gt;^&lt;/span&gt;&lt;span style=&quot;color: #848ea9;&quot;&gt;\r\n\f]\\|pack\\|func\\|impo\\|cons\\|var.\\|type\\|\t\t*....&quot;&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;outline-minor-mode 1&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;local-set-key &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;\M-a&quot;&lt;/span&gt; &#39;outline-previous-visible-heading&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;local-set-key &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;\M-e&quot;&lt;/span&gt; &#39;outline-next-visible-heading&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;local-set-key &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;\C-c\C-b&quot;&lt;/span&gt; &#39;go&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;local-set-key &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;\C-c\C-u&quot;&lt;/span&gt; &#39;pop-tag-mark&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+   &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;Menu bar&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(require&lt;/span&gt; &#39;&lt;span style=&quot;color: #d55e00; font-weight: bold;&quot;&gt;easymenu&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;defconst go-hooked-menu
+     &#39;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;Go tools&quot;&lt;/span&gt;
+       [&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;Go run buffer &quot;&lt;/span&gt; go t]
+       [&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;Go reformat buffer&quot;&lt;/span&gt; go-fmt-buffer t]
+       [&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;Go jump&quot;&lt;/span&gt; godef-jump t]
+       [&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;Go jump back&quot;&lt;/span&gt; pop-tag-mark t]
+       [&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;Get describe&quot;&lt;/span&gt; godef-describe t]
+       [&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;Add import&quot;&lt;/span&gt; go-import-add t]
+       [&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;Go check buffer&quot;&lt;/span&gt; go-&lt;span style=&quot;color: #d55e00; font-weight: bold; font-style: italic;&quot;&gt;fix&lt;/span&gt;-buffer t]&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;easy-menu-define
+     go-added-menu
+     &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;current-local-map&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+     &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;Go tools&quot;&lt;/span&gt;
+     go-hooked-menu&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+
+   &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;Other&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;setq show-trailing-whitespace t&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+   &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;helper function&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(defun&lt;/span&gt; &lt;span style=&quot;color: #d55e00;&quot;&gt;go&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;()&lt;/span&gt;
+  &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;run current buffer&quot;&lt;/span&gt;
+  &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;interactive&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;compile &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;concat &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;go run &quot;&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;buffer-file-name&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))))&lt;/span&gt;
+
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;helper function&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(defun&lt;/span&gt; &lt;span style=&quot;color: #d55e00;&quot;&gt;go-fmt-buffer&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;()&lt;/span&gt;
+    &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;run gofmt on current buffer&quot;&lt;/span&gt;
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;interactive&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(if&lt;/span&gt; buffer-read-only
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(progn&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;ding&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;message &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;Buffer is read only&quot;&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(let&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;((&lt;/span&gt;p &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;line-number-at-pos&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;filename &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;buffer-file-name&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;old-max-mini-window-height max-mini-window-height&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;show-all&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(if&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;get-buffer &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;*Go Reformat Errors*&quot;&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(progn&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;delete-windows-on &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;*Go Reformat Errors*&quot;&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;kill-buffer &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;*Go Reformat Errors*&quot;&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)))&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;setq max-mini-window-height 1&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(if&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;= 0 &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;shell-command-on-region &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;point-min&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;point-max&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;gofmt&quot;&lt;/span&gt; &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;*Go Reformat Output*&quot;&lt;/span&gt; nil &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;*Go Reformat Errors*&quot;&lt;/span&gt; t&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(progn&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;erase-buffer&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;insert-buffer-substring &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;*Go Reformat Output*&quot;&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;goto-char &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;point-min&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;forward-line &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;1- p&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)))&lt;/span&gt;
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;with-current-buffer &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;*Go Reformat Errors*&quot;&lt;/span&gt;
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(progn&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;goto-char &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;point-min&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(while&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;re-search-forward &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;&amp;lt;standard input&amp;gt;&quot;&lt;/span&gt; nil t&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;replace-match filename&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;goto-char &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;point-min&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;compilation-mode&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))))&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;setq max-mini-window-height old-max-mini-window-height&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;delete-windows-on &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;*Go Reformat Output*&quot;&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;kill-buffer &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;*Go Reformat Output*&quot;&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))))&lt;/span&gt;
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;helper function&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(defun&lt;/span&gt; go-&lt;span style=&quot;color: #d55e00; font-weight: bold; font-style: italic;&quot;&gt;fix&lt;/span&gt;-buffer &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;()&lt;/span&gt;
+    &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;run gofix on current buffer&quot;&lt;/span&gt;
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;interactive&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;show-all&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;shell-command-on-region &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;point-min&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;point-max&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;go tool &lt;/span&gt;&lt;span style=&quot;color: #d55e00; font-weight: bold; font-style: italic;&quot;&gt;fix&lt;/span&gt;&lt;span style=&quot;color: #848ea9;&quot;&gt; -diff&quot;&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Linux文件读写</title>
+   <link href="http://www.zifeiwo.com/linux/2014/10/12/linux_file"/>
+   <updated>2014-10-12T22:09:00+08:00</updated>
+   <id>http://www.zifeiwo.com/linux/2014/10/12/linux_file</id>
+   <content type="html">&lt;div id=&quot;table-of-contents&quot;&gt;
+&lt;h2&gt;&amp;#30446;&amp;#24405;&lt;/h2&gt;
+&lt;div id=&quot;text-table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1&quot;&gt;总括&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-2&quot;&gt;引用&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-sec-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;总括&lt;/h2&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-sec-2&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-2&quot;&gt;引用&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-2&quot;&gt;
+&lt;p&gt;
+&lt;a href=&quot;http://blog.csdn.net/guogaofeng1219/article/details/5411821&quot;&gt;linux文件读写浅析&lt;/a&gt;
+&lt;a href=&quot;http://www.jb51.net/LINUXjishu/86937.html&quot;&gt;linux0拷贝技术&lt;/a&gt;
+&lt;a href=&quot;http://www.ibm.com/developerworks/cn/linux/l-kernel-memory-access/&quot;&gt;从 Linux 内核访问用户空间内存&lt;/a&gt;
+&lt;a href=&quot;http://blog.csdn.net/mg0832058/article/details/5890688&quot;&gt;内存映射文件&lt;/a&gt;
+&lt;a href=&quot;http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space&quot;&gt;http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>linux管道</title>
+   <link href="http://www.zifeiwo.com/linux/2014/09/27/linux_pipe"/>
+   <updated>2014-09-27T00:08:00+08:00</updated>
+   <id>http://www.zifeiwo.com/linux/2014/09/27/linux_pipe</id>
+   <content type="html">&lt;div id=&quot;table-of-contents&quot;&gt;
+&lt;h2&gt;&amp;#30446;&amp;#24405;&lt;/h2&gt;
+&lt;div id=&quot;text-table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1&quot;&gt;管道机制&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1-1&quot;&gt;简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1-2&quot;&gt;参考&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-2&quot;&gt;使用&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-2-1&quot;&gt;pipe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-2-2&quot;&gt;FIFO(命名管道)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-sec-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;管道机制&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+&lt;/div&gt;&lt;div id=&quot;outline-container-sec-1-1&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-1&quot;&gt;简介&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-1&quot;&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;管道是一个固定大小的缓冲区。在Linux中，该缓冲区的单位为1页，即4K字节,供16*4k空间(默认),达到缓存区大小,write会默认阻塞
+&lt;/li&gt;
+&lt;li&gt;内核必须利用一定的机制同步对管道的访问，为此，内核使用了锁、等待队列和信号
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-1-2&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-2&quot;&gt;参考&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-2&quot;&gt;
+&lt;p&gt;
+&lt;a href=&quot;http://oss.org.cn/kernel-book/ch07/7.1.1.htm&quot;&gt;管道机制&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-2&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-2&quot;&gt;使用&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-2&quot;&gt;
+&lt;/div&gt;&lt;div id=&quot;outline-container-sec-2-1&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-2-1&quot;&gt;pipe&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-2-1&quot;&gt;
+&lt;/div&gt;&lt;div id=&quot;outline-container-sec-2-1-1&quot; class=&quot;outline-4&quot;&gt;
+&lt;h4 id=&quot;sec-2-1-1&quot;&gt;简介&lt;/h4&gt;
+&lt;div class=&quot;outline-text-4&quot; id=&quot;text-2-1-1&quot;&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;一个普通的管道仅可供具有共同祖先的两个进程之间共享，并且这个祖先必须已经建立了供它们使用的管道。
+&lt;/li&gt;
+&lt;li&gt;在管道中的数据始终以和写数据相同的次序来进行读，这表示lseek()系统调用对管道不起作用。
+&lt;/li&gt;
+&lt;li&gt;每个进程需要关闭不用的fd,这样只要管道某一端的情况可以快速反应到另一端.如A的写fd关闭了,B的读fd就会读到0返回,而非阻塞.
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-2-1-2&quot; class=&quot;outline-4&quot;&gt;
+&lt;h4 id=&quot;sec-2-1-2&quot;&gt;基本代码&lt;/h4&gt;
+&lt;div class=&quot;outline-text-4&quot; id=&quot;text-2-1-2&quot;&gt;
+&lt;p&gt;
+1.函数:pipe,fork,dup,dup2
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+
+&lt;pre class=&quot;src src-cpp&quot;&gt;&lt;span style=&quot;color: #0072b2;&quot;&gt;#include&lt;/span&gt; &lt;span style=&quot;color: #848ea9;&quot;&gt;&amp;lt;unistd.h&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color: #0072b2;&quot;&gt;#include&lt;/span&gt; &lt;span style=&quot;color: #848ea9;&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color: #0072b2;&quot;&gt;#include&lt;/span&gt; &lt;span style=&quot;color: #848ea9;&quot;&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color: #0072b2;&quot;&gt;#include&lt;/span&gt; &lt;span style=&quot;color: #848ea9;&quot;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;
+
+&lt;span style=&quot;color: #0072b2; font-weight: bold;&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #d55e00;&quot;&gt;main&lt;/span&gt;(&lt;span style=&quot;color: #0072b2; font-weight: bold;&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #e69f00; font-weight: bold;&quot;&gt;argc&lt;/span&gt;, &lt;span style=&quot;color: #0072b2; font-weight: bold;&quot;&gt;char&lt;/span&gt; **&lt;span style=&quot;color: #e69f00; font-weight: bold;&quot;&gt;argv&lt;/span&gt;)
+{
+    &lt;span style=&quot;color: #0072b2; font-weight: bold;&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #e69f00; font-weight: bold;&quot;&gt;fd&lt;/span&gt;[2];
+    pipe(fd);
+    &lt;span style=&quot;color: #0072b2; font-weight: bold;&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #e69f00; font-weight: bold;&quot;&gt;rpipe&lt;/span&gt; = fd[0];
+    &lt;span style=&quot;color: #0072b2; font-weight: bold;&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #e69f00; font-weight: bold;&quot;&gt;wpipe&lt;/span&gt; = fd[1];
+    &lt;span style=&quot;color: #0072b2; font-weight: bold;&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #e69f00; font-weight: bold;&quot;&gt;pid&lt;/span&gt; = fork();
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;if&lt;/span&gt; (pid == 0)
+    {   
+        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;/* &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;&amp;#23376;&amp;#36827;&amp;#31243;&amp;#20851;&amp;#25481;&amp;#35835;&amp;#30340;&amp;#37027;&amp;#31471;&amp;#65292;&amp;#21482;&amp;#29992;&amp;#20889;&amp;#30340;&amp;#19968;&amp;#31471; */&lt;/span&gt;
+        close(rpipe); 
+        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;/* &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;&amp;#25226;&amp;#26631;&amp;#20934;&amp;#36755;&amp;#20837;&amp;#25351;&amp;#21521;pipe&amp;#30340;&amp;#20889;&amp;#30340;&amp;#19968;&amp;#31471; */&lt;/span&gt;
+        dup2(wpipe, STDOUT_FILENO);
+        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;/* &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;&amp;#25191;&amp;#34892;pwd */&lt;/span&gt;
+        execl(&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;/bin/pwd&quot;&lt;/span&gt;,&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;.&quot;&lt;/span&gt;,&lt;span style=&quot;color: #d55e00; font-weight: bold;&quot;&gt;NULL&lt;/span&gt;);
+        exit(0);
+    }   
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;else&lt;/span&gt;
+    {   
+        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;/* &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;&amp;#29238;&amp;#36827;&amp;#31243;&amp;#20851;&amp;#25481;&amp;#20889;&amp;#30340;&amp;#37027;&amp;#31471;&amp;#65292;&amp;#21482;&amp;#29992;&amp;#35835;&amp;#30340;&amp;#19968;&amp;#31471; */&lt;/span&gt;
+        close(wpipe);
+        printf(&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;begin parent process\n&quot;&lt;/span&gt;);
+        &lt;span style=&quot;color: #0072b2; font-weight: bold;&quot;&gt;char&lt;/span&gt; &lt;span style=&quot;color: #e69f00; font-weight: bold;&quot;&gt;readbuffer&lt;/span&gt;[1024];
+        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;/* &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;&amp;#20174;&amp;#35835;&amp;#30340;&amp;#36825;&amp;#31471;&amp;#35835;&amp;#20986;pwd&amp;#30340;&amp;#36755;&amp;#20986; */&lt;/span&gt;
+        &lt;span style=&quot;color: #0072b2; font-weight: bold;&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #e69f00; font-weight: bold;&quot;&gt;nbytes&lt;/span&gt; = read(rpipe, readbuffer, &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;sizeof&lt;/span&gt;(readbuffer));
+
+        printf(&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;Received string: %s | %d\n&quot;&lt;/span&gt;, readbuffer, nbytes);
+        wait(pid);
+    }   
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;return&lt;/span&gt; 0;
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;
+&lt;a href=&quot;http://oss.org.cn/kernel-book/ch07/7.1.2.htm&quot;&gt;http://oss.org.cn/kernel-book/ch07/7.1.2.htm&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+2.popen,pclose
+&lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+
+&lt;pre class=&quot;src src-cpp&quot;&gt;&lt;span style=&quot;color: #0072b2;&quot;&gt;#include&lt;/span&gt;&lt;span style=&quot;color: #848ea9;&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color: #0072b2; font-weight: bold;&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #d55e00;&quot;&gt;main&lt;/span&gt;()
+{
+&lt;span style=&quot;color: #0072b2; font-weight: bold;&quot;&gt;FILE&lt;/span&gt; * &lt;span style=&quot;color: #e69f00; font-weight: bold;&quot;&gt;fp&lt;/span&gt;;
+&lt;span style=&quot;color: #0072b2; font-weight: bold;&quot;&gt;char&lt;/span&gt; &lt;span style=&quot;color: #e69f00; font-weight: bold;&quot;&gt;buffer&lt;/span&gt;[80];
+fp=popen(&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;cat /etc/passwd&quot;&lt;/span&gt;,&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;r&quot;&lt;/span&gt;);
+fgets(buffer,&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;sizeof&lt;/span&gt;(buffer),fp);
+printf(&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;%s&quot;&lt;/span&gt;,buffer);
+pclose(fp);
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;return&lt;/span&gt; 0;
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-2-2&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-2-2&quot;&gt;FIFO(命名管道)&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-2-2&quot;&gt;
+&lt;/div&gt;&lt;div id=&quot;outline-container-sec-2-2-1&quot; class=&quot;outline-4&quot;&gt;
+&lt;h4 id=&quot;sec-2-2-1&quot;&gt;简介&lt;/h4&gt;
+&lt;div class=&quot;outline-text-4&quot; id=&quot;text-2-2-1&quot;&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;匿名管道是临时对象,命名管道使用之前已经存在
+&lt;/li&gt;
+&lt;li&gt;通过mknod命令或函数创建FIFO文件.
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+用的少
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>org-mode相关</title>
+   <link href="http://www.zifeiwo.com/emacs/2014/09/27/org-doc"/>
+   <updated>2014-09-27T00:06:00+08:00</updated>
+   <id>http://www.zifeiwo.com/emacs/2014/09/27/org-doc</id>
+   <content type="html">&lt;div id=&quot;table-of-contents&quot;&gt;
+&lt;h2&gt;&amp;#30446;&amp;#24405;&lt;/h2&gt;
+&lt;div id=&quot;text-table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1&quot;&gt;基本功能&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1-1&quot;&gt;词语渲染&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1-2&quot;&gt;列表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1-3&quot;&gt;链接、注释、引用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1-4&quot;&gt;代码例子&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1-5&quot;&gt;表格&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-2&quot;&gt;快捷键&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-3&quot;&gt;文件头&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-4&quot;&gt;模板&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-sec-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;基本功能&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+&lt;/div&gt;&lt;div id=&quot;outline-container-sec-1-1&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-1&quot;&gt;词语渲染&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-1&quot;&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+
+&lt;pre class=&quot;src src-org&quot;&gt; &lt;span style=&quot;font-weight: bold;&quot;&gt;*&amp;#21152;&amp;#31895;*&lt;/span&gt; 
+ &lt;span style=&quot;font-style: italic;&quot;&gt;/&amp;#26012;&amp;#20307;/&lt;/span&gt; 
+ &lt;span style=&quot;text-decoration: underline;&quot;&gt;_&amp;#19979;&amp;#21010;&amp;#32447;_&lt;/span&gt; 
+&amp;#19979;&amp;#26631;_2
+&amp;#19978;&amp;#26631;^2
+ &lt;span style=&quot;color: #7f7f7f;&quot;&gt;=&amp;#31561;&amp;#23485;&amp;#23383;&amp;#20307;code=&lt;/span&gt;
+ &lt;span style=&quot;text-decoration: line-through;&quot;&gt;+&amp;#19981;&amp;#38656;&amp;#35201;+&lt;/span&gt;
+&lt;span style=&quot;color: #7f7f7f;&quot;&gt;~verbatim~&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-1-2&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-2&quot;&gt;列表&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-2&quot;&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+
+&lt;pre class=&quot;src src-org&quot;&gt;+ &amp;#21015;&amp;#34920;1
++ &amp;#21015;&amp;#34920;2
+   + &amp;#21015;&amp;#34920;2.1
++ &amp;#21015;&amp;#34920;3
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-1-3&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-3&quot;&gt;链接、注释、引用&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-3&quot;&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+
+&lt;pre class=&quot;src src-org&quot;&gt;&lt;span style=&quot;color: #0072b2; text-decoration: underline;&quot;&gt;&lt;a href=&quot;http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034.html&quot;&gt;&amp;#21487;&amp;#29992;&amp;#30340;org&amp;#29992;&amp;#20363;&lt;/a&gt;&lt;/span&gt;
+&amp;#27880;&amp;#37322;&lt;span style=&quot;color: #a020f0; text-decoration: underline;&quot;&gt;[1]&lt;/span&gt;
+&amp;#27880;&amp;#37322;2&lt;span style=&quot;color: #a020f0; text-decoration: underline;&quot;&gt;[fn:2]&lt;/span&gt;
+&amp;#22270;&amp;#29255;&amp;#24341;&amp;#29992; [path/imge]
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;#+BEGIN_EXAMPLE&lt;/span&gt;
+&lt;span style=&quot;color: #7f7f7f;&quot;&gt;&amp;#20869;&amp;#23481;&lt;/span&gt;
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;#+END_EXAMPLE&lt;/span&gt;
+
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;#+BEGIN_VERSE&lt;/span&gt;
+ &amp;#20869;&amp;#25628;&amp;#32034;&amp;#23481; 
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;#+END_VERSE&lt;/span&gt;
+
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;#+BEGIN_QUOTE&lt;/span&gt;
+&amp;#24341;&amp;#29992; 
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;#+END_QUOTE&lt;/span&gt;
+
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;#+BEGIN_CENTER&lt;/span&gt;
+&amp;#24341;&amp;#25991;&amp;#23621;&amp;#20013;&amp;#25490;&amp;#29256;
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;#+END_CENTER&lt;/span&gt;
+
+#&lt;span style=&quot;text-decoration: underline;&quot;&gt;&amp;lt;&amp;lt;target&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-1-4&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-4&quot;&gt;代码例子&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-4&quot;&gt;
+&lt;pre class=&quot;example&quot;&gt;
+#+BEGIN_SRC c
+int man()
+{
+int s=0;
+}
+#+END_SRC
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-1-5&quot; class=&quot;outline-3&quot;&gt;
+&lt;h3 id=&quot;sec-1-5&quot;&gt;表格&lt;/h3&gt;
+&lt;div class=&quot;outline-text-3&quot; id=&quot;text-1-5&quot;&gt;
+&lt;pre class=&quot;example&quot;&gt;
+| name | sfs | sfssdf |
+tab键自动补齐 C-c C-c可以自动对齐表格
+C-c tab增加一条红线
+如
+| d  | s   | df   |
+|----+-----+------|
+| ss | fsd | dsfs |
+| sd | s   | d    |
+&lt;/pre&gt;
+&lt;p&gt;
+&lt;i&gt;target&lt;/i&gt;&lt;br  /&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-sec-2&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-2&quot;&gt;快捷键&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-2&quot;&gt;
+&lt;table border=&quot;2&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; rules=&quot;groups&quot; frame=&quot;hsides&quot;&gt;
+
+
+&lt;colgroup&gt;
+&lt;col  class=&quot;left&quot; /&gt;
+
+&lt;col  class=&quot;left&quot; /&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;前/后一级标题&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-c C-n/p&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;前/后以及标题，同级&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-c C-f/b&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;当前位置插入一个列表项或标题&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;M-RET&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;在文档尾部插入列表项或标题&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-RET&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;改变当前标题级别&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;M-LEFT/RIGHT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;同时改变标题下所有的标题级别&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;M-S-LEFT/RIGHT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;隐藏或打开标题下内容&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;TAB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;自动对齐文本&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;M+q&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;对齐表格&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-c C-c&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;编辑链接&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-c C-l&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;浏览器打开链接&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-c C-o&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;文字转表格&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-c&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-sec-3&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-3&quot;&gt;文件头&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-3&quot;&gt;
+&lt;pre class=&quot;example&quot;&gt;
+文档元数据
+#+TITLE： 标题
+#+AUTHOR: 作者
+#+DATA：创作日期
+#+EMAIL：email地址
+#+DESCRIPTION：对文档的简要描述
+#+KEYDORDS：关键字
+#+OPTION：H:2 num:t toc:nil
+#+OPTION是复合的选项，它包括以下内容。
+H：设置导出标题的级别
+num:打开或者关闭section-numbers
+toc:打开或关闭表格
+\n:打开或关闭换行
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-4&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-4&quot;&gt;模板&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-4&quot;&gt;
+&lt;p&gt;
+插入模板先输入～&amp;lt;～，然后添加如下在加&amp;lt;Tab&amp;gt;&lt;br  /&gt;
+&lt;/p&gt;
+&lt;table border=&quot;2&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; rules=&quot;groups&quot; frame=&quot;hsides&quot;&gt;
+
+
+&lt;colgroup&gt;
+&lt;col  class=&quot;left&quot; /&gt;
+
+&lt;col  class=&quot;left&quot; /&gt;
+
+&lt;col  class=&quot;left&quot; /&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;`s&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;`#+begin&lt;sub&gt;src&lt;/sub&gt;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;&amp;#x2026; #+end&lt;sub&gt;src&#39;&lt;/sub&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;`e&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;`#+begin&lt;sub&gt;example&lt;/sub&gt;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;&amp;#x2026; #+end&lt;sub&gt;example&#39;&lt;/sub&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;`q&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;`#+begin&lt;sub&gt;quote&lt;/sub&gt;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;&amp;#x2026; #+end&lt;sub&gt;quote&#39;&lt;/sub&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;`v&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;`#+begin&lt;sub&gt;verse&lt;/sub&gt;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;&amp;#x2026; #+end&lt;sub&gt;verse&#39;&lt;/sub&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;`c&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;`#+begin&lt;sub&gt;center&lt;/sub&gt;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;&amp;#x2026; #+end&lt;sub&gt;center&#39;&lt;/sub&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;`l&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;`#+begin&lt;sub&gt;latex&lt;/sub&gt;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;&amp;#x2026; #+end&lt;sub&gt;latex&#39;&lt;/sub&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;`L&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;`#+latex:&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;&amp;#xa0;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;`h&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;`#+begin&lt;sub&gt;html&lt;/sub&gt;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;&amp;#x2026; #+end&lt;sub&gt;html&#39;&lt;/sub&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;`H&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;`#+html:&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;&amp;#xa0;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;`a&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;`#+begin&lt;sub&gt;ascii&lt;/sub&gt;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;&amp;#x2026; #+end&lt;sub&gt;ascii&#39;&lt;/sub&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;`A&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;`#+ascii:&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;&amp;#xa0;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;`i&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;`#+index:&#39; line&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;&amp;#xa0;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;`I&#39;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;`#+include:&#39; line&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;&amp;#xa0;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>emacs快捷键</title>
+   <link href="http://www.zifeiwo.com/emacs/2014/09/27/keyboard"/>
+   <updated>2014-09-27T00:01:00+08:00</updated>
+   <id>http://www.zifeiwo.com/emacs/2014/09/27/keyboard</id>
+   <content type="html">&lt;div id=&quot;table-of-contents&quot;&gt;
+&lt;h2&gt;&amp;#30446;&amp;#24405;&lt;/h2&gt;
+&lt;div id=&quot;text-table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1&quot;&gt;1. 光标移动&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-2&quot;&gt;2. 编辑&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-3&quot;&gt;3. 缓冲区&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-4&quot;&gt;4. 其他&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-5&quot;&gt;5. Help and Information Functions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;&lt;span class=&quot;section-number-2&quot;&gt;1&lt;/span&gt; 光标移动&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+&lt;table border=&quot;2&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; rules=&quot;groups&quot; frame=&quot;hsides&quot;&gt;
+
+
+&lt;colgroup&gt;
+&lt;col  class=&quot;left&quot; /&gt;
+
+&lt;col  class=&quot;left&quot; /&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;跳转到某行&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;M-g M-g/M-g g&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;行首/行尾&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-a/C-e&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;页首/页尾&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;M-&amp;lt;/M-&amp;gt; or C-x [/ C-x ]&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;行移动&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-n C-P&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;字符&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-f C-b&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;词移动&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;M-f M-b&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;句移动&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;M-a M-e&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;某命令执行n次&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-u 8 C-f&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;选中&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-@&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;选中区域跳转&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-x c-x&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;回到之前光标位置&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-u C-@&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-sec-2&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-2&quot;&gt;&lt;span class=&quot;section-number-2&quot;&gt;2&lt;/span&gt; 编辑&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-2&quot;&gt;
+&lt;table border=&quot;2&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; rules=&quot;groups&quot; frame=&quot;hsides&quot;&gt;
+
+
+&lt;colgroup&gt;
+&lt;col  class=&quot;left&quot; /&gt;
+
+&lt;col  class=&quot;left&quot; /&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;粘贴&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-y&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;撤销&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-/&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;回撤&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;C-g C-/&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;&amp;lt;Delback&amp;gt;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;删除光标前的一个字符&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-d&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;删除光标后的一个字符&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;M-&amp;lt;Delback&amp;gt;&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;移除光标前的一个词&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;M-d&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;移除光标后的一个词&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-k&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;移除从光标到“行尾”间的字符&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;M-k&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;移除从光标到“句尾”间的字符&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;M-x replace-string a A&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;替换&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;M-x query-replace a A&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;替换前确认&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-sec-3&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-3&quot;&gt;&lt;span class=&quot;section-number-2&quot;&gt;3&lt;/span&gt; 缓冲区&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-3&quot;&gt;
+&lt;table border=&quot;2&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; rules=&quot;groups&quot; frame=&quot;hsides&quot;&gt;
+
+
+&lt;colgroup&gt;
+&lt;col  class=&quot;left&quot; /&gt;
+
+&lt;col  class=&quot;left&quot; /&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-x C-b&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;列出缓冲区&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-x s&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;保存多个缓冲区&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-4&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-4&quot;&gt;&lt;span class=&quot;section-number-2&quot;&gt;4&lt;/span&gt; 其他&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-4&quot;&gt;
+&lt;table border=&quot;2&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; rules=&quot;groups&quot; frame=&quot;hsides&quot;&gt;
+
+
+&lt;colgroup&gt;
+&lt;col  class=&quot;left&quot; /&gt;
+
+&lt;col  class=&quot;left&quot; /&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-h m&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;可以查看当前主模式的文档&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-s&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;是向前搜索&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-r&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;是向后搜索&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-c Ret&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;建立表格后，插入空行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id=&quot;outline-container-sec-5&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-5&quot;&gt;&lt;span class=&quot;section-number-2&quot;&gt;5&lt;/span&gt; Help and Information Functions&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-5&quot;&gt;
+&lt;table border=&quot;2&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; rules=&quot;groups&quot; frame=&quot;hsides&quot;&gt;
+
+
+&lt;colgroup&gt;
+&lt;col  class=&quot;left&quot; /&gt;
+
+&lt;col  class=&quot;left&quot; /&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-h t&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;Display the Emacs tutorial (for novices)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-h i&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;Enter Info, the internal documentation browser&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-g&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;Abort the current command (quit)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-h m&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;Describe special Emacs commands that are currently available&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-h k&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;Describe a particular command (for example, C-h k C-a describes the C-a command)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-h l&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;Show the last 60 characters and commands typed&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-_&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;Undo effect of the last change/command (can be repeated)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-h&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;a string         Show all commands containing string in their name&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;M-n&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;Used before a command, repeats it n times (same as C-u n)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-q&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;Insert special characters (for example, typing C-q C-l inserts C-l)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;left&quot;&gt;C-x d&lt;/td&gt;
+&lt;td class=&quot;left&quot;&gt;Display and edit directory lists (C-h m shows commands)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ 
+</feed>
+
+			</div>
+			<div class="clearboth pagebottom"></div>
+		</div>
+	</div>
+	<a href="#" class="scrollup">Scroll</a>
+	<footer>
+	<div class="footer-940">
+		<div class="footer-general-info">
+   			© 2014 zifeiwo<br>
+       		— Built
+       		in <a href="http://www.gnu.org/software/emacs/">Emacs</a>
+       		with <a href="http://orgmode.org">Org-mode</a>
+       		and <a href="http://github.com/mojombo/jekyll">Jekyll</a> <br>
+			theme by <a href="http://simpleyyt.github.io/">simpleyyt</a><br>
+		</div>
+		<div class="footer-col-cont">
+			<div class="footer-nav-col">
+				<h4><a>Categories</a></h4>
+				<ul>
+					
+					
+
+
+  
+     
+    	<li><a href="/categories.html#emacs-ref">
+    		emacs <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#linux-ref">
+    		linux <span>2</span>
+    	</a></li>
+    
+  
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Pages</a></h4>
+				<ul>
+					
+					
+					
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/about/">About</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Feed</a></h4>
+				<ul>
+					<li><a href="/atom.xml">Atom Feed</a></li>
+					<li><a href="/rss.xml">RSS Feed</a></li>
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Links</a></h4>
+				<ul>
+				
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a href = "/about.html">About Me</a></h4>
+				<ul>
+				 
+					<li><a href = "jwzhou0905@gmail.com">e-mail</a></li>
+				
+				</ul>
+			</div>
+			<div class="clearboth"></div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+	<div class="clearboth"></div>
+</footer>
+
+	
+
+
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F964490aa9e5f008e8e859ebf2877c63d' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+
+
+
+</body>
+</html>
+
