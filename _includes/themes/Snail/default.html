@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	{% if page.group == 'home' %}
+	<title>{{ site.title }}</title>
+    {% if site.description %}<meta name="description" content="{{ site.description }}">{% endif %}
+	{% else %}
+	<title>{{ page.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+	{% endif %}
+	<meta name="author" content="{{ site.author.name }}">
+	
+	<link rel="stylesheet" href="{{ ASSET_PATH }}/css/jquery.fancybox.css">
+	<link rel="stylesheet" href="{{ ASSET_PATH }}/css/main.css">
+	<link rel="stylesheet" href="{{ ASSET_PATH }}/css/pages/journal.css">
+	<link rel="stylesheet" href="{{ ASSET_PATH }}/css/team.css">
+	<link rel="stylesheet" href="{{ ASSET_PATH }}/css/static.css">
+	<link rel="stylesheet" href="{{ ASSET_PATH }}/css/style.css">
+	{% if page.group != 'search' %}<link rel="stylesheet" href="{{ BASE_PATH }}/assets/css/style.css">
+	{% else %}
+	<style >
+	.scrollup {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    display: none;
+    text-indent: -9999px;
+    /*border-radius: 8px 8px 8px 8px;*/
+    background:url('/assets/img/up-arrow.png') no-repeat center center;
+    background-color: #bbb;
+    background-size: 60% 60%;
+    transition: 1s;
+	}
+	.scrollup:hover {
+	    background-color:#777;
+	}
+	</style>
+	{% endif %}
+	<link rel="stylesheet" href="{{ ASSET_PATH }}/css/errors.css">
+	<link rel="stylesheet" href="{{ ASSET_PATH }}/google-code-prettify/prettify.css">
+	
+	<link rel="shortcut icon" href="{{ ASSET_PATH }}/img/favicon.ico">
+	
+	<script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.min.js"></script>
+	{% if site.auto_loadmore == true %}
+	<script type="text/javascript" src="{{ ASSET_PATH }}/js/auto_loadmore.js"></script>
+	{% else %}
+	<script type="text/javascript" src="{{ ASSET_PATH }}/js/loadmore.js"></script>
+	{% endif %}
+	<script type="text/javascript" src="{{ ASSET_PATH }}/google-code-prettify/prettify.js"></script>
+	
+	<script type="text/javascript">
+	  $(function(){
+		$("pre code").addClass("prettyprint linenums");
+		prettyPrint();
+	  });
+$(document).ready(function () {
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    });
+
+    $('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
+});
+
+	</script>
+	
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- atom & rss feed -->
+    <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+</head>
+<body>
+	<noscript>
+		&amp;lt;div id="no-js"&amp;gt;Please enable JavaScript in your browser to experience {{ HOME_PATH }} fully&amp;lt;/div&amp;gt;
+	</noscript>
+    <div id="page-container">
+	<div class="nav"> 
+			{% include themes/Snail/nav.html %}
+	</div>
+		<div  class="content">
+			<div id="page-content">
+				{{ content }}
+			</div>
+			<div class="clearboth pagebottom"></div>
+		</div>
+	</div>
+	<a href="#" class="scrollup">Scroll</a>
+	{% include themes/Snail/footer.html %}
+	{% include JB/analytics %}
+</body>
+</html>

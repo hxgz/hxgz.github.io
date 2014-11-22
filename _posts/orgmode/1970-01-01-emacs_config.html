@@ -1,0 +1,204 @@
+---
+layout: post
+title: emacs配置文件
+date: 2014-10-25 09:25
+excerpt: 
+categories:
+- emacs
+tags:
+- IDE
+published: true
+---
+<div id="table-of-contents">
+<h2>&#30446;&#24405;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">程序语言配置</a>
+<ul>
+<li><a href="#sec-1-1">python</a></li>
+<li><a href="#sec-1-2">c/c++</a></li>
+<li><a href="#sec-1-3">go</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">程序语言配置</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">python</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>需要:rope jedi ropemacs flake flymake-cursor.el
+</li>
+
+<li>参考: <a href="http://blog.csdn.net/mikelearnscode/article/details/23022277">http://blog.csdn.net/mikelearnscode/article/details/23022277</a>
+</li>
+
+<li>elpy 文档: <a href="https://media.readthedocs.org/pdf/elpy/latest/elpy.pdf">https://media.readthedocs.org/pdf/elpy/latest/elpy.pdf</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">c/c++</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>需要:cscope
+</li>
+<li>.emacs
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-lisp"><span style="color: #56b4e9; font-weight: bold;">(defun</span> <span style="color: #d55e00;">my:ac-c-headers-init</span> <span style="color: #56b4e9; font-weight: bold;">()</span>
+  <span style="color: #56b4e9; font-weight: bold;">(require</span> '<span style="color: #d55e00; font-weight: bold;">auto-complete-c-headers</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+  <span style="color: #56b4e9; font-weight: bold;">(</span>add-to-list 'ac-sources 'ac-source-c-headers<span style="color: #56b4e9; font-weight: bold;">))</span>
+<span style="color: #56b4e9; font-weight: bold;">(</span>add-hook 'c++-mode-hook 'my:ac-c-headers-init<span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #56b4e9; font-weight: bold;">(</span>add-hook 'c-mode-hook 'my:ac-c-headers-init<span style="color: #56b4e9; font-weight: bold;">)</span>
+
+<span style="color: #009e73; font-style: italic;">;;</span><span style="color: #009e73; font-style: italic;">&#35821;&#27861;&#35299;&#37322;&#22120; ac-clang-syntax-check&#21487;&#20570;&#35821;&#27861;&#26816;&#26597;</span>
+<span style="color: #56b4e9; font-weight: bold;">(</span>add-to-list 'load-path <span style="color: #848ea9;">"/home/eric/.emacs.d/elpa/auto-complete-clang-async"</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #56b4e9; font-weight: bold;">(require</span> '<span style="color: #d55e00; font-weight: bold;">auto-complete-clang-async</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #56b4e9; font-weight: bold;">(defun</span> <span style="color: #d55e00;">ac-cc-mode-setup</span> <span style="color: #56b4e9; font-weight: bold;">()</span>
+  <span style="color: #56b4e9; font-weight: bold;">(</span>setq ac-clang-complete-executable <span style="color: #848ea9;">"/home/eric/.emacs.d/elpa/auto-complete-clang-async/clang-complete"</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+  <span style="color: #56b4e9; font-weight: bold;">(</span>setq ac-sources '<span style="color: #56b4e9; font-weight: bold;">(</span>ac-source-clang-async<span style="color: #56b4e9; font-weight: bold;">))</span>
+  <span style="color: #56b4e9; font-weight: bold;">(</span>ac-clang-launch-completion-process<span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #56b4e9; font-weight: bold;">(defun</span> <span style="color: #d55e00;">my-ac-config</span> <span style="color: #56b4e9; font-weight: bold;">()</span>
+  <span style="color: #56b4e9; font-weight: bold;">(</span>add-hook 'c-mode-common-hook 'ac-cc-mode-setup<span style="color: #56b4e9; font-weight: bold;">)</span>
+  <span style="color: #56b4e9; font-weight: bold;">(</span>add-hook 'auto-complete-mode-hook 'ac-common-setup<span style="color: #56b4e9; font-weight: bold;">)</span>
+  <span style="color: #56b4e9; font-weight: bold;">(</span>global-auto-complete-mode t<span style="color: #56b4e9; font-weight: bold;">))</span>
+<span style="color: #56b4e9; font-weight: bold;">(</span>my-ac-config<span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #009e73; font-style: italic;">;;</span><span style="color: #009e73; font-style: italic;">cscope</span>
+<span style="color: #009e73; font-style: italic;">;;</span><span style="color: #009e73; font-style: italic;">&#20248;&#21270; http://blog.csdn.net/intrepyd/article/details/4202312</span>
+<span style="color: #56b4e9; font-weight: bold;">(require</span> '<span style="color: #d55e00; font-weight: bold;">xcscope</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #009e73; font-style: italic;">;;</span><span style="color: #009e73; font-style: italic;">c/c++&#20195;&#30721;&#39118;&#26684; google-c-syle</span>
+<span style="color: #56b4e9; font-weight: bold;">(require</span> '<span style="color: #d55e00; font-weight: bold;">google-c-style</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #56b4e9; font-weight: bold;">(</span>add-hook 'c-mode-common-hook 'google-set-c-style<span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #56b4e9; font-weight: bold;">(</span>add-hook 'c-mode-common-hook 'google-make-newline-indent<span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #56b4e9; font-weight: bold;">(defun</span> <span style="color: #d55e00;">my-c-mode-hook</span> <span style="color: #56b4e9; font-weight: bold;">()</span>
+  <span style="color: #56b4e9; font-weight: bold;">(</span>setq c-basic-offset 4          <span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">&#22522;&#26412;&#32553;&#36827;&#23485;&#24230;</span>
+        indent-tabs-mode t        <span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">&#31105;&#27490;&#31354;&#26684;&#26367;&#25442;Tab</span>
+        default-tab-width 4<span style="color: #56b4e9; font-weight: bold;">))</span>     <span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">&#40664;&#35748;Tab&#23485;&#24230;</span>
+<span style="color: #56b4e9; font-weight: bold;">(</span>add-hook 'c-mode-hook 'my-c-mode-hook<span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #56b4e9; font-weight: bold;">(</span>add-hook 'c++-mode-hook 'my-c-mode-hook<span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #56b4e9; font-weight: bold;">(defun</span> <span style="color: #d55e00;">my-c++-mode-hook</span> <span style="color: #56b4e9; font-weight: bold;">()</span>
+  <span style="color: #56b4e9; font-weight: bold;">(</span>setq c-basic-offset 4<span style="color: #56b4e9; font-weight: bold;">)</span>
+  <span style="color: #56b4e9; font-weight: bold;">(</span>c-set-offset 'substatement-open 0<span style="color: #56b4e9; font-weight: bold;">))</span>
+<span style="color: #56b4e9; font-weight: bold;">(</span>add-hook 'c++-mode-hook 'my-c++-mode-hook<span style="color: #56b4e9; font-weight: bold;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3">go</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>.emacs
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-lisp"><span style="color: #009e73; font-style: italic;">;;</span><span style="color: #009e73; font-style: italic;">go lang</span>
+<span style="color: #56b4e9; font-weight: bold;">(require</span> '<span style="color: #d55e00; font-weight: bold;">go-mode-load</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #56b4e9; font-weight: bold;">(require</span> '<span style="color: #d55e00; font-weight: bold;">go-autocomplete</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #56b4e9; font-weight: bold;">(require</span> '<span style="color: #d55e00; font-weight: bold;">go-eldoc</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #56b4e9; font-weight: bold;">(</span>add-hook 'go-mode-hook 'go-eldoc-setup<span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">speedbar</span>
+<span style="color: #56b4e9; font-weight: bold;">(</span>add-hook
+'go-mode-hook
+'<span style="color: #56b4e9; font-weight: bold;">(lambda</span> <span style="color: #56b4e9; font-weight: bold;">()</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>add-hook 'before-save-hook 'gofmt-before-save<span style="color: #56b4e9; font-weight: bold;">)</span>
+   <span style="color: #56b4e9; font-weight: bold;">(if</span> <span style="color: #56b4e9; font-weight: bold;">(</span>not <span style="color: #56b4e9; font-weight: bold;">(</span>string-match <span style="color: #848ea9;">"go"</span> compile-command<span style="color: #56b4e9; font-weight: bold;">))</span>
+       <span style="color: #56b4e9; font-weight: bold;">(</span>set <span style="color: #56b4e9; font-weight: bold;">(</span>make-local-variable 'compile-command<span style="color: #56b4e9; font-weight: bold;">)</span>
+            <span style="color: #848ea9;">"go build -v"</span><span style="color: #56b4e9; font-weight: bold;">))</span>
+   <span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">gocode</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>auto-complete-mode 1<span style="color: #56b4e9; font-weight: bold;">)</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>setq ac-sources '<span style="color: #56b4e9; font-weight: bold;">(</span>ac-source-go<span style="color: #56b4e9; font-weight: bold;">))</span>
+   <span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">Imenu &amp; Speedbar</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>setq imenu-generic-expression
+         '<span style="color: #56b4e9; font-weight: bold;">((</span><span style="color: #848ea9;">"type"</span> <span style="color: #848ea9;">"^type *\\([</span><span style="color: #848ea9;">^</span><span style="color: #848ea9;"> \t\n\r\f]*\\)"</span> 1<span style="color: #56b4e9; font-weight: bold;">)</span>
+           <span style="color: #56b4e9; font-weight: bold;">(</span><span style="color: #848ea9;">"func"</span> <span style="color: #848ea9;">"^func *\\(.*\\) {"</span> 1<span style="color: #56b4e9; font-weight: bold;">)))</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>imenu-add-to-menubar <span style="color: #848ea9;">"Index"</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+   <span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">Outline mode</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>make-local-variable 'outline-regexp<span style="color: #56b4e9; font-weight: bold;">)</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>setq outline-regexp <span style="color: #848ea9;">"//\\.\\|//[</span><span style="color: #848ea9;">^</span><span style="color: #848ea9;">\r\n\f][</span><span style="color: #848ea9;">^</span><span style="color: #848ea9;">\r\n\f]\\|pack\\|func\\|impo\\|cons\\|var.\\|type\\|\t\t*...."</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>outline-minor-mode 1<span style="color: #56b4e9; font-weight: bold;">)</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>local-set-key <span style="color: #848ea9;">"\M-a"</span> 'outline-previous-visible-heading<span style="color: #56b4e9; font-weight: bold;">)</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>local-set-key <span style="color: #848ea9;">"\M-e"</span> 'outline-next-visible-heading<span style="color: #56b4e9; font-weight: bold;">)</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>local-set-key <span style="color: #848ea9;">"\C-c\C-b"</span> 'go<span style="color: #56b4e9; font-weight: bold;">)</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>local-set-key <span style="color: #848ea9;">"\C-c\C-u"</span> 'pop-tag-mark<span style="color: #56b4e9; font-weight: bold;">)</span>
+   <span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">Menu bar</span>
+   <span style="color: #56b4e9; font-weight: bold;">(require</span> '<span style="color: #d55e00; font-weight: bold;">easymenu</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>defconst go-hooked-menu
+     '<span style="color: #56b4e9; font-weight: bold;">(</span><span style="color: #848ea9;">"Go tools"</span>
+       [<span style="color: #848ea9;">"Go run buffer "</span> go t]
+       [<span style="color: #848ea9;">"Go reformat buffer"</span> go-fmt-buffer t]
+       [<span style="color: #848ea9;">"Go jump"</span> godef-jump t]
+       [<span style="color: #848ea9;">"Go jump back"</span> pop-tag-mark t]
+       [<span style="color: #848ea9;">"Get describe"</span> godef-describe t]
+       [<span style="color: #848ea9;">"Add import"</span> go-import-add t]
+       [<span style="color: #848ea9;">"Go check buffer"</span> go-<span style="color: #d55e00; font-weight: bold; font-style: italic;">fix</span>-buffer t]<span style="color: #56b4e9; font-weight: bold;">))</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>easy-menu-define
+     go-added-menu
+     <span style="color: #56b4e9; font-weight: bold;">(</span>current-local-map<span style="color: #56b4e9; font-weight: bold;">)</span>
+     <span style="color: #848ea9;">"Go tools"</span>
+     go-hooked-menu<span style="color: #56b4e9; font-weight: bold;">)</span>
+
+   <span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">Other</span>
+   <span style="color: #56b4e9; font-weight: bold;">(</span>setq show-trailing-whitespace t<span style="color: #56b4e9; font-weight: bold;">)</span>
+   <span style="color: #56b4e9; font-weight: bold;">))</span>
+<span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">helper function</span>
+<span style="color: #56b4e9; font-weight: bold;">(defun</span> <span style="color: #d55e00;">go</span> <span style="color: #56b4e9; font-weight: bold;">()</span>
+  <span style="color: #848ea9;">"run current buffer"</span>
+  <span style="color: #56b4e9; font-weight: bold;">(</span>interactive<span style="color: #56b4e9; font-weight: bold;">)</span>
+  <span style="color: #56b4e9; font-weight: bold;">(</span>compile <span style="color: #56b4e9; font-weight: bold;">(</span>concat <span style="color: #848ea9;">"go run "</span> <span style="color: #56b4e9; font-weight: bold;">(</span>buffer-file-name<span style="color: #56b4e9; font-weight: bold;">))))</span>
+
+<span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">helper function</span>
+<span style="color: #56b4e9; font-weight: bold;">(defun</span> <span style="color: #d55e00;">go-fmt-buffer</span> <span style="color: #56b4e9; font-weight: bold;">()</span>
+    <span style="color: #848ea9;">"run gofmt on current buffer"</span>
+    <span style="color: #56b4e9; font-weight: bold;">(</span>interactive<span style="color: #56b4e9; font-weight: bold;">)</span>
+    <span style="color: #56b4e9; font-weight: bold;">(if</span> buffer-read-only
+    <span style="color: #56b4e9; font-weight: bold;">(progn</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>ding<span style="color: #56b4e9; font-weight: bold;">)</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>message <span style="color: #848ea9;">"Buffer is read only"</span><span style="color: #56b4e9; font-weight: bold;">))</span>
+    <span style="color: #56b4e9; font-weight: bold;">(let</span> <span style="color: #56b4e9; font-weight: bold;">((</span>p <span style="color: #56b4e9; font-weight: bold;">(</span>line-number-at-pos<span style="color: #56b4e9; font-weight: bold;">))</span>
+    <span style="color: #56b4e9; font-weight: bold;">(</span>filename <span style="color: #56b4e9; font-weight: bold;">(</span>buffer-file-name<span style="color: #56b4e9; font-weight: bold;">))</span>
+    <span style="color: #56b4e9; font-weight: bold;">(</span>old-max-mini-window-height max-mini-window-height<span style="color: #56b4e9; font-weight: bold;">))</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>show-all<span style="color: #56b4e9; font-weight: bold;">)</span>
+        <span style="color: #56b4e9; font-weight: bold;">(if</span> <span style="color: #56b4e9; font-weight: bold;">(</span>get-buffer <span style="color: #848ea9;">"*Go Reformat Errors*"</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+    <span style="color: #56b4e9; font-weight: bold;">(progn</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>delete-windows-on <span style="color: #848ea9;">"*Go Reformat Errors*"</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>kill-buffer <span style="color: #848ea9;">"*Go Reformat Errors*"</span><span style="color: #56b4e9; font-weight: bold;">)))</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>setq max-mini-window-height 1<span style="color: #56b4e9; font-weight: bold;">)</span>
+        <span style="color: #56b4e9; font-weight: bold;">(if</span> <span style="color: #56b4e9; font-weight: bold;">(</span>= 0 <span style="color: #56b4e9; font-weight: bold;">(</span>shell-command-on-region <span style="color: #56b4e9; font-weight: bold;">(</span>point-min<span style="color: #56b4e9; font-weight: bold;">)</span> <span style="color: #56b4e9; font-weight: bold;">(</span>point-max<span style="color: #56b4e9; font-weight: bold;">)</span> <span style="color: #848ea9;">"gofmt"</span> <span style="color: #848ea9;">"*Go Reformat Output*"</span> nil <span style="color: #848ea9;">"*Go Reformat Errors*"</span> t<span style="color: #56b4e9; font-weight: bold;">))</span>
+    <span style="color: #56b4e9; font-weight: bold;">(progn</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>erase-buffer<span style="color: #56b4e9; font-weight: bold;">)</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>insert-buffer-substring <span style="color: #848ea9;">"*Go Reformat Output*"</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>goto-char <span style="color: #56b4e9; font-weight: bold;">(</span>point-min<span style="color: #56b4e9; font-weight: bold;">))</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>forward-line <span style="color: #56b4e9; font-weight: bold;">(</span>1- p<span style="color: #56b4e9; font-weight: bold;">)))</span>
+    <span style="color: #56b4e9; font-weight: bold;">(</span>with-current-buffer <span style="color: #848ea9;">"*Go Reformat Errors*"</span>
+    <span style="color: #56b4e9; font-weight: bold;">(progn</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>goto-char <span style="color: #56b4e9; font-weight: bold;">(</span>point-min<span style="color: #56b4e9; font-weight: bold;">))</span>
+        <span style="color: #56b4e9; font-weight: bold;">(while</span> <span style="color: #56b4e9; font-weight: bold;">(</span>re-search-forward <span style="color: #848ea9;">"&lt;standard input&gt;"</span> nil t<span style="color: #56b4e9; font-weight: bold;">)</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>replace-match filename<span style="color: #56b4e9; font-weight: bold;">))</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>goto-char <span style="color: #56b4e9; font-weight: bold;">(</span>point-min<span style="color: #56b4e9; font-weight: bold;">))</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>compilation-mode<span style="color: #56b4e9; font-weight: bold;">))))</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>setq max-mini-window-height old-max-mini-window-height<span style="color: #56b4e9; font-weight: bold;">)</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>delete-windows-on <span style="color: #848ea9;">"*Go Reformat Output*"</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>kill-buffer <span style="color: #848ea9;">"*Go Reformat Output*"</span><span style="color: #56b4e9; font-weight: bold;">))))</span>
+<span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">helper function</span>
+<span style="color: #56b4e9; font-weight: bold;">(defun</span> go-<span style="color: #d55e00; font-weight: bold; font-style: italic;">fix</span>-buffer <span style="color: #56b4e9; font-weight: bold;">()</span>
+    <span style="color: #848ea9;">"run gofix on current buffer"</span>
+    <span style="color: #56b4e9; font-weight: bold;">(</span>interactive<span style="color: #56b4e9; font-weight: bold;">)</span>
+    <span style="color: #56b4e9; font-weight: bold;">(</span>show-all<span style="color: #56b4e9; font-weight: bold;">)</span>
+    <span style="color: #56b4e9; font-weight: bold;">(</span>shell-command-on-region <span style="color: #56b4e9; font-weight: bold;">(</span>point-min<span style="color: #56b4e9; font-weight: bold;">)</span> <span style="color: #56b4e9; font-weight: bold;">(</span>point-max<span style="color: #56b4e9; font-weight: bold;">)</span> <span style="color: #848ea9;">"go tool </span><span style="color: #d55e00; font-weight: bold; font-style: italic;">fix</span><span style="color: #848ea9;"> -diff"</span><span style="color: #56b4e9; font-weight: bold;">))</span>
+</pre>
+</div>
+</div>
+</div>
+</div>

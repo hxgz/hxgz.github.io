@@ -1,0 +1,322 @@
+---
+layout: post
+title: org-mode相关
+date: 2014-09-27 00:06
+excerpt: 
+categories:
+- emacs
+tags:
+- emacs
+- org-mode
+published: true
+---
+<div id="table-of-contents">
+<h2>&#30446;&#24405;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">基本功能</a>
+<ul>
+<li><a href="#sec-1-1">词语渲染</a></li>
+<li><a href="#sec-1-2">列表</a></li>
+<li><a href="#sec-1-3">链接、注释、引用</a></li>
+<li><a href="#sec-1-4">代码例子</a></li>
+<li><a href="#sec-1-5">表格</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">快捷键</a></li>
+<li><a href="#sec-3">文件头</a></li>
+<li><a href="#sec-4">模板</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">基本功能</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">词语渲染</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+
+<pre class="src src-org"> <span style="font-weight: bold;">*&#21152;&#31895;*</span> 
+ <span style="font-style: italic;">/&#26012;&#20307;/</span> 
+ <span style="text-decoration: underline;">_&#19979;&#21010;&#32447;_</span> 
+&#19979;&#26631;_2
+&#19978;&#26631;^2
+ <span style="color: #7f7f7f;">=&#31561;&#23485;&#23383;&#20307;code=</span>
+ <span style="text-decoration: line-through;">+&#19981;&#38656;&#35201;+</span>
+<span style="color: #7f7f7f;">~verbatim~</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">列表</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="org-src-container">
+
+<pre class="src src-org">+ &#21015;&#34920;1
++ &#21015;&#34920;2
+   + &#21015;&#34920;2.1
++ &#21015;&#34920;3
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3">链接、注释、引用</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="org-src-container">
+
+<pre class="src src-org"><span style="color: #0072b2; text-decoration: underline;"><a href="http://www.cnblogs.com/qlwy/archive/2012/06/15/2551034.html">&#21487;&#29992;&#30340;org&#29992;&#20363;</a></span>
+&#27880;&#37322;<span style="color: #a020f0; text-decoration: underline;">[1]</span>
+&#27880;&#37322;2<span style="color: #a020f0; text-decoration: underline;">[fn:2]</span>
+&#22270;&#29255;&#24341;&#29992; [path/imge]
+<span style="color: #009e73; font-style: italic;">#+BEGIN_EXAMPLE</span>
+<span style="color: #7f7f7f;">&#20869;&#23481;</span>
+<span style="color: #009e73; font-style: italic;">#+END_EXAMPLE</span>
+
+<span style="color: #009e73; font-style: italic;">#+BEGIN_VERSE</span>
+ &#20869;&#25628;&#32034;&#23481; 
+<span style="color: #009e73; font-style: italic;">#+END_VERSE</span>
+
+<span style="color: #009e73; font-style: italic;">#+BEGIN_QUOTE</span>
+&#24341;&#29992; 
+<span style="color: #009e73; font-style: italic;">#+END_QUOTE</span>
+
+<span style="color: #009e73; font-style: italic;">#+BEGIN_CENTER</span>
+&#24341;&#25991;&#23621;&#20013;&#25490;&#29256;
+<span style="color: #009e73; font-style: italic;">#+END_CENTER</span>
+
+#<span style="text-decoration: underline;">&lt;&lt;target&gt;&gt;</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4">代码例子</h3>
+<div class="outline-text-3" id="text-1-4">
+<pre class="example">
+#+BEGIN_SRC c
+int man()
+{
+int s=0;
+}
+#+END_SRC
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5">表格</h3>
+<div class="outline-text-3" id="text-1-5">
+<pre class="example">
+| name | sfs | sfssdf |
+tab键自动补齐 C-c C-c可以自动对齐表格
+C-c tab增加一条红线
+如
+| d  | s   | df   |
+|----+-----+------|
+| ss | fsd | dsfs |
+| sd | s   | d    |
+</pre>
+<p>
+<i>target</i><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">快捷键</h2>
+<div class="outline-text-2" id="text-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">前/后一级标题</td>
+<td class="left">C-c C-n/p</td>
+</tr>
+
+<tr>
+<td class="left">前/后以及标题，同级</td>
+<td class="left">C-c C-f/b</td>
+</tr>
+
+<tr>
+<td class="left">当前位置插入一个列表项或标题</td>
+<td class="left">M-RET</td>
+</tr>
+
+<tr>
+<td class="left">在文档尾部插入列表项或标题</td>
+<td class="left">C-RET</td>
+</tr>
+
+<tr>
+<td class="left">改变当前标题级别</td>
+<td class="left">M-LEFT/RIGHT</td>
+</tr>
+
+<tr>
+<td class="left">同时改变标题下所有的标题级别</td>
+<td class="left">M-S-LEFT/RIGHT</td>
+</tr>
+
+<tr>
+<td class="left">隐藏或打开标题下内容</td>
+<td class="left">TAB</td>
+</tr>
+
+<tr>
+<td class="left">自动对齐文本</td>
+<td class="left">M+q</td>
+</tr>
+
+<tr>
+<td class="left">对齐表格</td>
+<td class="left">C-c C-c</td>
+</tr>
+
+<tr>
+<td class="left">编辑链接</td>
+<td class="left">C-c C-l</td>
+</tr>
+
+<tr>
+<td class="left">浏览器打开链接</td>
+<td class="left">C-c C-o</td>
+</tr>
+
+<tr>
+<td class="left">文字转表格</td>
+<td class="left">C-c</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">文件头</h2>
+<div class="outline-text-2" id="text-3">
+<pre class="example">
+文档元数据
+#+TITLE： 标题
+#+AUTHOR: 作者
+#+DATA：创作日期
+#+EMAIL：email地址
+#+DESCRIPTION：对文档的简要描述
+#+KEYDORDS：关键字
+#+OPTION：H:2 num:t toc:nil
+#+OPTION是复合的选项，它包括以下内容。
+H：设置导出标题的级别
+num:打开或者关闭section-numbers
+toc:打开或关闭表格
+\n:打开或关闭换行
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">模板</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+插入模板先输入～&lt;～，然后添加如下在加&lt;Tab&gt;<br  />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">`s'</td>
+<td class="left">`#+begin<sub>src</sub></td>
+<td class="left">&#x2026; #+end<sub>src'</sub></td>
+</tr>
+
+<tr>
+<td class="left">`e'</td>
+<td class="left">`#+begin<sub>example</sub></td>
+<td class="left">&#x2026; #+end<sub>example'</sub></td>
+</tr>
+
+<tr>
+<td class="left">`q'</td>
+<td class="left">`#+begin<sub>quote</sub></td>
+<td class="left">&#x2026; #+end<sub>quote'</sub></td>
+</tr>
+
+<tr>
+<td class="left">`v'</td>
+<td class="left">`#+begin<sub>verse</sub></td>
+<td class="left">&#x2026; #+end<sub>verse'</sub></td>
+</tr>
+
+<tr>
+<td class="left">`c'</td>
+<td class="left">`#+begin<sub>center</sub></td>
+<td class="left">&#x2026; #+end<sub>center'</sub></td>
+</tr>
+
+<tr>
+<td class="left">`l'</td>
+<td class="left">`#+begin<sub>latex</sub></td>
+<td class="left">&#x2026; #+end<sub>latex'</sub></td>
+</tr>
+
+<tr>
+<td class="left">`L'</td>
+<td class="left">`#+latex:'</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">`h'</td>
+<td class="left">`#+begin<sub>html</sub></td>
+<td class="left">&#x2026; #+end<sub>html'</sub></td>
+</tr>
+
+<tr>
+<td class="left">`H'</td>
+<td class="left">`#+html:'</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">`a'</td>
+<td class="left">`#+begin<sub>ascii</sub></td>
+<td class="left">&#x2026; #+end<sub>ascii'</sub></td>
+</tr>
+
+<tr>
+<td class="left">`A'</td>
+<td class="left">`#+ascii:'</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">`i'</td>
+<td class="left">`#+index:' line</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">`I'</td>
+<td class="left">`#+include:' line</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

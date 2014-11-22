@@ -1,0 +1,298 @@
+---
+layout: post
+title: emacs快捷键
+date: 2014-09-27 00:01
+excerpt: 
+categories:
+- emacs
+tags:
+- emacs
+- 快捷键
+published: true
+---
+<div id="table-of-contents">
+<h2>&#30446;&#24405;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. 光标移动</a></li>
+<li><a href="#sec-2">2. 编辑</a></li>
+<li><a href="#sec-3">3. 缓冲区</a></li>
+<li><a href="#sec-4">4. 其他</a></li>
+<li><a href="#sec-5">5. Help and Information Functions</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 光标移动</h2>
+<div class="outline-text-2" id="text-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">跳转到某行</td>
+<td class="left">M-g M-g/M-g g</td>
+</tr>
+
+<tr>
+<td class="left">行首/行尾</td>
+<td class="left">C-a/C-e</td>
+</tr>
+
+<tr>
+<td class="left">页首/页尾</td>
+<td class="left">M-&lt;/M-&gt; or C-x [/ C-x ]</td>
+</tr>
+
+<tr>
+<td class="left">行移动</td>
+<td class="left">C-n C-P</td>
+</tr>
+
+<tr>
+<td class="left">字符</td>
+<td class="left">C-f C-b</td>
+</tr>
+
+<tr>
+<td class="left">词移动</td>
+<td class="left">M-f M-b</td>
+</tr>
+
+<tr>
+<td class="left">句移动</td>
+<td class="left">M-a M-e</td>
+</tr>
+
+<tr>
+<td class="left">某命令执行n次</td>
+<td class="left">C-u 8 C-f</td>
+</tr>
+
+<tr>
+<td class="left">选中</td>
+<td class="left">C-@</td>
+</tr>
+
+<tr>
+<td class="left">选中区域跳转</td>
+<td class="left">C-x c-x</td>
+</tr>
+
+<tr>
+<td class="left">回到之前光标位置</td>
+<td class="left">C-u C-@</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 编辑</h2>
+<div class="outline-text-2" id="text-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">粘贴</td>
+<td class="left">C-y</td>
+</tr>
+
+<tr>
+<td class="left">撤销</td>
+<td class="left">C-/</td>
+</tr>
+
+<tr>
+<td class="left">回撤</td>
+<td class="left">C-g C-/</td>
+</tr>
+
+<tr>
+<td class="left">&lt;Delback&gt;</td>
+<td class="left">删除光标前的一个字符</td>
+</tr>
+
+<tr>
+<td class="left">C-d</td>
+<td class="left">删除光标后的一个字符</td>
+</tr>
+
+<tr>
+<td class="left">M-&lt;Delback&gt;</td>
+<td class="left">移除光标前的一个词</td>
+</tr>
+
+<tr>
+<td class="left">M-d</td>
+<td class="left">移除光标后的一个词</td>
+</tr>
+
+<tr>
+<td class="left">C-k</td>
+<td class="left">移除从光标到“行尾”间的字符</td>
+</tr>
+
+<tr>
+<td class="left">M-k</td>
+<td class="left">移除从光标到“句尾”间的字符</td>
+</tr>
+
+<tr>
+<td class="left">M-x replace-string a A</td>
+<td class="left">替换</td>
+</tr>
+
+<tr>
+<td class="left">M-x query-replace a A</td>
+<td class="left">替换前确认</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> 缓冲区</h2>
+<div class="outline-text-2" id="text-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">C-x C-b</td>
+<td class="left">列出缓冲区</td>
+</tr>
+
+<tr>
+<td class="left">C-x s</td>
+<td class="left">保存多个缓冲区</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> 其他</h2>
+<div class="outline-text-2" id="text-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">C-h m</td>
+<td class="left">可以查看当前主模式的文档</td>
+</tr>
+
+<tr>
+<td class="left">C-s</td>
+<td class="left">是向前搜索</td>
+</tr>
+
+<tr>
+<td class="left">C-r</td>
+<td class="left">是向后搜索</td>
+</tr>
+
+<tr>
+<td class="left">C-c Ret</td>
+<td class="left">建立表格后，插入空行</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Help and Information Functions</h2>
+<div class="outline-text-2" id="text-5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">C-h t</td>
+<td class="left">Display the Emacs tutorial (for novices)</td>
+</tr>
+
+<tr>
+<td class="left">C-h i</td>
+<td class="left">Enter Info, the internal documentation browser</td>
+</tr>
+
+<tr>
+<td class="left">C-g</td>
+<td class="left">Abort the current command (quit)</td>
+</tr>
+
+<tr>
+<td class="left">C-h m</td>
+<td class="left">Describe special Emacs commands that are currently available</td>
+</tr>
+
+<tr>
+<td class="left">C-h k</td>
+<td class="left">Describe a particular command (for example, C-h k C-a describes the C-a command)</td>
+</tr>
+
+<tr>
+<td class="left">C-h l</td>
+<td class="left">Show the last 60 characters and commands typed</td>
+</tr>
+
+<tr>
+<td class="left">C-_</td>
+<td class="left">Undo effect of the last change/command (can be repeated)</td>
+</tr>
+
+<tr>
+<td class="left">C-h</td>
+<td class="left">a string         Show all commands containing string in their name</td>
+</tr>
+
+<tr>
+<td class="left">M-n</td>
+<td class="left">Used before a command, repeats it n times (same as C-u n)</td>
+</tr>
+
+<tr>
+<td class="left">C-q</td>
+<td class="left">Insert special characters (for example, typing C-q C-l inserts C-l)</td>
+</tr>
+
+<tr>
+<td class="left">C-x d</td>
+<td class="left">Display and edit directory lists (C-h m shows commands)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
