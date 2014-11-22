@@ -129,6 +129,8 @@ $(document).ready(function () {
 				  
 				
 			 
+				
+			 
 			
 			
 		</ul>
@@ -157,10 +159,164 @@ $(document).ready(function () {
         <description>子非我 - zifeiwo</description>
         <link>http://www.zifeiwo.com</link>
         <link>http://www.zifeiwo.com</link>
-        <lastBuildDate>2014-11-22T15:58:22+08:00</lastBuildDate>
-        <pubDate>2014-11-22T15:58:22+08:00</pubDate>
+        <lastBuildDate>2014-11-22T22:12:18+08:00</lastBuildDate>
+        <pubDate>2014-11-22T22:12:18+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>使用org生成jekyll博客</title>
+                <description>&lt;div id=&quot;table-of-contents&quot;&gt;
+&lt;h2&gt;&amp;#30446;&amp;#24405;&lt;/h2&gt;
+&lt;div id=&quot;text-table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-1&quot;&gt;emacs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-2&quot;&gt;需要解决的问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-3&quot;&gt;.emacs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-4&quot;&gt;org书写&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#sec-5&quot;&gt;发布&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+主要讲述怎么用emacs,org-mode,生成jekyll博客.
+&lt;/p&gt;
+&lt;div id=&quot;outline-container-sec-1&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-1&quot;&gt;emacs&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-1&quot;&gt;
+&lt;p&gt;
+org-mode 8.2.7c 
+&lt;/p&gt;
+
+&lt;p&gt;
+emacs 24.4
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-2&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-2&quot;&gt;需要解决的问题&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-2&quot;&gt;
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;jekyll 需要发布文件名前加时间戳.如 &lt;code&gt;1970-01-01-how_to_write_blog.html&lt;/code&gt; ,但我的org文件加时间戳太麻烦了.
+&lt;/li&gt;
+&lt;li&gt;org-mode 在发布html时jekyll的头部信息需要在html最前面,所以publish出的html只保留body以及目录
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-3&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-3&quot;&gt;.emacs&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-3&quot;&gt;
+&lt;p&gt;
+先准备好jekyll的工作目录如 &lt;code&gt;jekyll_work&lt;/code&gt;,可以从
+&lt;a href=&quot;https://github.com/zifeiwoo/zifeiwoo.github.io&quot;&gt;https://github.com/zifeiwoo/zifeiwoo.github.io&lt;/a&gt; 下载出来成为你的 &lt;code&gt;jekyll_work&lt;/code&gt;,然后org-mode输出的html将保留到
+&lt;code&gt;${jekyll_work}/_posts/&lt;/code&gt; .最后使用 &lt;code&gt;jekyll build&lt;/code&gt; 产生 &lt;code&gt;_site&lt;/code&gt; 目录下供
+发布的网站.
+&lt;/p&gt;
+
+&lt;div class=&quot;org-src-container&quot;&gt;
+
+&lt;pre class=&quot;src src-lisp&quot;&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(defun&lt;/span&gt; &lt;span style=&quot;color: #d55e00;&quot;&gt;my_publish_func&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;plist filename pub-dir&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+  &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;&amp;#21487;&amp;#20197;&amp;#23558;org-publish&amp;#36755;&amp;#20986;&amp;#25991;&amp;#20214;&amp;#21152;&amp;#20837;&amp;#26102;&amp;#38388;&amp;#25139;&quot;&lt;/span&gt;
+  &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(let&lt;/span&gt; &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;html-file html-file-with-date&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt; 
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;setq html-file
+         &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;org-html-publish-to-html plist filename pub-dir&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;setq html-file-with-date &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;concat &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;file-name-directory html-file&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+                                      &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;1970-01-01-&quot;&lt;/span&gt; 
+                                      &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;file-name-nondirectory html-file&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)))&lt;/span&gt;
+    &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;rename-file html-file html-file-with-date t&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)))&lt;/span&gt;
+
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(require&lt;/span&gt; &#39;&lt;span style=&quot;color: #d55e00; font-weight: bold;&quot;&gt;ox-publish&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;&lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;org-mode&amp;lt;8 &amp;#20351;&amp;#29992; (require &#39;org-publish)&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;setq org-publish-project-alist
+  &#39;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;org-notes&quot;&lt;/span&gt;               &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;used to export .org file&lt;/span&gt;
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:base-directory&lt;/span&gt; &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;/home/eric/own/website/org/&quot;&lt;/span&gt;  &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;.org&amp;#28304;&amp;#30446;&amp;#24405;&lt;/span&gt;
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:base-extension&lt;/span&gt; &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;org&quot;&lt;/span&gt;     &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;&amp;#21482;&amp;#22788;&amp;#29702;&amp;#25193;&amp;#23637;&amp;#21517;&lt;/span&gt;
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:publishing-directory&lt;/span&gt; &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;/home/eric/own/website/jekyll/_posts/&quot;&lt;/span&gt;    &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;&amp;#36755;&amp;#20986;&amp;#30446;&amp;#24405;&lt;/span&gt;
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:recursive&lt;/span&gt; t
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:publishing-function&lt;/span&gt; my_publish_func&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;  org-html-publish-to-html;&amp;lt;8 org-publish-org-to-html&lt;/span&gt;
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:headline-levels&lt;/span&gt; 4               &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;&lt;/span&gt;
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:auto-preamble&lt;/span&gt; t
+         &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;:auto-sitemap t                  ;&amp;#33258;&amp;#21160;&amp;#29983;&amp;#25104; sitemap.org&lt;/span&gt;
+         &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;:sitemap-filename &quot;sitemap.org&quot;  ;sitemap&amp;#25991;&amp;#20214;&amp;#21517;&lt;/span&gt;
+         &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;:sitemap-title &quot;Site&quot;         ;sitemap&amp;#26631;&amp;#39064;&lt;/span&gt;
+         &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;:sitemap-file-entry-format &quot;%t\t\t\t\t%d&quot; ;sitemap&amp;#38142;&amp;#25509;&amp;#39033;&amp;#26684;&amp;#24335;&lt;/span&gt;
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:export-creator-info&lt;/span&gt; nil    &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;&amp;#26159;&amp;#21542;&amp;#20851;&amp;#38381;&quot;Created by Org&quot;&lt;/span&gt;
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:export-author-info&lt;/span&gt; nil     &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;&amp;#26159;&amp;#21542;&amp;#20851;&amp;#38381; &quot;Author: Your Name&quot;&lt;/span&gt;
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:auto-postamble&lt;/span&gt; nil         &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;&amp;#26159;&amp;#21542;&amp;#20851;&amp;#38381;&amp;#33258;&amp;#21160; postamble &lt;/span&gt;
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:table-of-contents&lt;/span&gt; t        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;&amp;#30446;&amp;#24405;&lt;/span&gt;
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:section-numbers&lt;/span&gt; nil        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;&amp;#26159;&amp;#21542;&amp;#21152;&amp;#25968;&amp;#23383;&lt;/span&gt;
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:html-postamble&lt;/span&gt; &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;&amp;lt;p class=\&quot;postamble\&quot;&amp;gt;Last Updated %d.&amp;lt;/p&amp;gt; &quot;&lt;/span&gt; 
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:style-include-default&lt;/span&gt; nil  &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;&amp;#40664;&amp;#35748;css&amp;#25991;&amp;#20214;&lt;/span&gt;
+         &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;:html-link-home &quot;/sitemap.html&quot;&lt;/span&gt;
+         &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;:makeindex t&lt;/span&gt;
+         &lt;span style=&quot;color: #0072b2;&quot;&gt;:body-only&lt;/span&gt; t
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)&lt;/span&gt;
+        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;(&quot;org-static&quot;                ;Used to publish static files&lt;/span&gt;
+        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;;  &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;:base-directory &quot;/home/eric/own/website/jekyll/static/&quot;&lt;/span&gt;
+        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;;  &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;:base-extension &quot;css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf&quot;&lt;/span&gt;
+        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;;  &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;:publishing-directory &quot;/home/eric/own/html/&quot;&lt;/span&gt;
+        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;;  &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;:recursive t&lt;/span&gt;
+        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;;  &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;:publishing-function org-publish-attachment&lt;/span&gt;
+        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;;  &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;)&lt;/span&gt;
+        &lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;;; &lt;/span&gt;&lt;span style=&quot;color: #009e73; font-style: italic;&quot;&gt;(&quot;blog&quot; :components (&quot;org-notes&quot; &quot;org-static&quot;)) ;combine &quot;org-static&quot; and &quot;org-static&quot; into one function call&lt;/span&gt;
+&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;outline-container-sec-4&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-4&quot;&gt;org书写&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-4&quot;&gt;
+&lt;p&gt;
+在org文件里面加入jekyll的头部信息如
+&lt;/p&gt;
+&lt;pre class=&quot;example&quot;&gt;
+#+OPTIONS: toc:nil
+#+BEGIN_HTML
+---
+layout: post
+title: how_to_write_blog
+date: 2014-11-22 21:53
+excerpt: 
+categories:
+- 类别
+tags:
+- 标签
+published: true
+---
+#+END_HTML
+#+TOC: headlines 4
+&lt;/pre&gt;
+&lt;p&gt;
+&lt;code&gt;#+OPTIONS: toc:nil&lt;/code&gt; 表示 去掉头部信息
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;code&gt;#+TOC: headlines 4&lt;/code&gt; 再此加入目录信息
+&lt;/p&gt;
+
+&lt;p&gt;
+可以把上面信息加到 &lt;b&gt;YaSnippet&lt;/b&gt; 的 &lt;b&gt;org-mode&lt;/b&gt; 上方便插入.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;outline-container-sec-5&quot; class=&quot;outline-2&quot;&gt;
+&lt;h2 id=&quot;sec-5&quot;&gt;发布&lt;/h2&gt;
+&lt;div class=&quot;outline-text-2&quot; id=&quot;text-5&quot;&gt;
+&lt;p&gt;
+默认是C-c C-e P p
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+                <link>http://www.zifeiwo.com/%E5%8D%9A%E5%AE%A2/2014/11/22/how_to_write_blog</link>
+                <guid>http://www.zifeiwo.com/%E5%8D%9A%E5%AE%A2/2014/11/22/how_to_write_blog</guid>
+                <pubDate>2014-11-22T20:46:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>emacs配置文件</title>
@@ -1206,6 +1362,10 @@ toc:打开或关闭表格
     	<li><a href="/categories.html#linux-ref">
     		linux <span>2</span>
     	</a></li>
+     
+    	<li><a href="/categories.html#博客-ref">
+    		博客 <span>1</span>
+    	</a></li>
     
   
 
@@ -1273,6 +1433,8 @@ toc:打开或关闭表格
       	<li><a href="/tags.html">Tags</a></li>
       	
       
+    
+  
     
   
 

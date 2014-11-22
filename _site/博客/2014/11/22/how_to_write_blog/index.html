@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>使用org生成jekyll博客</title>
+    
+	
+	<meta name="author" content="zifeiwo">
+	
+	<link rel="stylesheet" href="/assets/themes/Snail/css/jquery.fancybox.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/main.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/pages/journal.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/team.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/static.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/style.css">
+	<link rel="stylesheet" href="/assets/css/style.css">
+	
+	<link rel="stylesheet" href="/assets/themes/Snail/css/errors.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/google-code-prettify/prettify.css">
+	
+	<link rel="shortcut icon" href="/assets/themes/Snail/img/favicon.ico">
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/auto_loadmore.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/google-code-prettify/prettify.js"></script>
+	
+	<script type="text/javascript">
+	  $(function(){
+		$("pre code").addClass("prettyprint linenums");
+		prettyPrint();
+	  });
+$(document).ready(function () {
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    });
+
+    $('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
+});
+
+	</script>
+	
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+</head>
+<body>
+	<noscript>
+		&amp;lt;div id="no-js"&amp;gt;Please enable JavaScript in your browser to experience / fully&amp;lt;/div&amp;gt;
+	</noscript>
+    <div id="page-container">
+	<div class="nav"> 
+			<nav>
+	<div id="nav-c">
+		<ul id="nav-list">
+			<li id="home"><a href="/">Home</a></li>
+			
+			
+			
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "About"><a href="/about/">About</a></li>
+					
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Archive"><a href="/archive.html">Archive</a></li>
+					
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Categories"><a href="/categories.html">Categories</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Tags"><a href="/tags.html">Tags</a></li>
+					
+				  
+				
+			 
+				
+			 
+			
+			
+		</ul>
+		<form id="nav-search" method="GET" action="/search.html">
+			<div id="search-right-pix">
+				<div id="search-left-pix">
+					<div id="search-center-pix">
+						<div id="search-icon-pix"></div>
+						<input name="query" type="text" placeholder="Search">
+					</div>
+				</div>
+			</div>
+		</form>
+		
+		
+	</div>
+</nav>
+
+	</div>
+		<div  class="content">
+			<div id="page-content">
+				
+<div id="page-content">
+	<div class="cont932">
+	<div id="journal-articles-block">
+		<div class="journal-article">
+			<div class="journal-post-info">
+				<div class="journal-cat-box">
+				
+				
+				<div class="journal-cat-box">
+
+<a href="/categories.html#博客-ref" title="博客">
+	博客
+
+</a>
+</div>
+				
+				</div>
+			</div>
+			<div class="journal-body">
+				<h1 class="journal-title">使用org生成jekyll博客<span class="author"></span>
+				</h1>
+				<span class="the-article">
+				<div id="table-of-contents">
+<h2>&#30446;&#24405;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">emacs</a></li>
+<li><a href="#sec-2">需要解决的问题</a></li>
+<li><a href="#sec-3">.emacs</a></li>
+<li><a href="#sec-4">org书写</a></li>
+<li><a href="#sec-5">发布</a></li>
+</ul>
+</div>
+</div>
+
+<p>
+主要讲述怎么用emacs,org-mode,生成jekyll博客.
+</p>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">emacs</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+org-mode 8.2.7c 
+</p>
+
+<p>
+emacs 24.4
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">需要解决的问题</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>jekyll 需要发布文件名前加时间戳.如 <code>1970-01-01-how_to_write_blog.html</code> ,但我的org文件加时间戳太麻烦了.
+</li>
+<li>org-mode 在发布html时jekyll的头部信息需要在html最前面,所以publish出的html只保留body以及目录
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">.emacs</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+先准备好jekyll的工作目录如 <code>jekyll_work</code>,可以从
+<a href="https://github.com/zifeiwoo/zifeiwoo.github.io">https://github.com/zifeiwoo/zifeiwoo.github.io</a> 下载出来成为你的 <code>jekyll_work</code>,然后org-mode输出的html将保留到
+<code>${jekyll_work}/_posts/</code> .最后使用 <code>jekyll build</code> 产生 <code>_site</code> 目录下供
+发布的网站.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-lisp"><span style="color: #56b4e9; font-weight: bold;">(defun</span> <span style="color: #d55e00;">my_publish_func</span> <span style="color: #56b4e9; font-weight: bold;">(</span>plist filename pub-dir<span style="color: #56b4e9; font-weight: bold;">)</span>
+  <span style="color: #848ea9;">"&#21487;&#20197;&#23558;org-publish&#36755;&#20986;&#25991;&#20214;&#21152;&#20837;&#26102;&#38388;&#25139;"</span>
+  <span style="color: #56b4e9; font-weight: bold;">(let</span> <span style="color: #56b4e9; font-weight: bold;">(</span>html-file html-file-with-date<span style="color: #56b4e9; font-weight: bold;">)</span> 
+    <span style="color: #56b4e9; font-weight: bold;">(</span>setq html-file
+         <span style="color: #56b4e9; font-weight: bold;">(</span>org-html-publish-to-html plist filename pub-dir<span style="color: #56b4e9; font-weight: bold;">))</span>
+    <span style="color: #56b4e9; font-weight: bold;">(</span>setq html-file-with-date <span style="color: #56b4e9; font-weight: bold;">(</span>concat <span style="color: #56b4e9; font-weight: bold;">(</span>file-name-directory html-file<span style="color: #56b4e9; font-weight: bold;">)</span>
+                                      <span style="color: #848ea9;">"1970-01-01-"</span> 
+                                      <span style="color: #56b4e9; font-weight: bold;">(</span>file-name-nondirectory html-file<span style="color: #56b4e9; font-weight: bold;">)))</span>
+    <span style="color: #56b4e9; font-weight: bold;">(</span>rename-file html-file html-file-with-date t<span style="color: #56b4e9; font-weight: bold;">)))</span>
+
+<span style="color: #56b4e9; font-weight: bold;">(require</span> '<span style="color: #d55e00; font-weight: bold;">ox-publish</span><span style="color: #56b4e9; font-weight: bold;">)</span>
+<span style="color: #009e73; font-style: italic;">;</span><span style="color: #009e73; font-style: italic;">org-mode&lt;8 &#20351;&#29992; (require 'org-publish)</span>
+<span style="color: #56b4e9; font-weight: bold;">(</span>setq org-publish-project-alist
+  '<span style="color: #56b4e9; font-weight: bold;">(</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span><span style="color: #848ea9;">"org-notes"</span>               <span style="color: #009e73; font-style: italic;">;used to export .org file</span>
+         <span style="color: #0072b2;">:base-directory</span> <span style="color: #848ea9;">"/home/eric/own/website/org/"</span>  <span style="color: #009e73; font-style: italic;">;.org&#28304;&#30446;&#24405;</span>
+         <span style="color: #0072b2;">:base-extension</span> <span style="color: #848ea9;">"org"</span>     <span style="color: #009e73; font-style: italic;">;&#21482;&#22788;&#29702;&#25193;&#23637;&#21517;</span>
+         <span style="color: #0072b2;">:publishing-directory</span> <span style="color: #848ea9;">"/home/eric/own/website/jekyll/_posts/"</span>    <span style="color: #009e73; font-style: italic;">;&#36755;&#20986;&#30446;&#24405;</span>
+         <span style="color: #0072b2;">:recursive</span> t
+         <span style="color: #0072b2;">:publishing-function</span> my_publish_func<span style="color: #009e73; font-style: italic;">;  org-html-publish-to-html;&lt;8 org-publish-org-to-html</span>
+         <span style="color: #0072b2;">:headline-levels</span> 4               <span style="color: #009e73; font-style: italic;">;</span>
+         <span style="color: #0072b2;">:auto-preamble</span> t
+         <span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">:auto-sitemap t                  ;&#33258;&#21160;&#29983;&#25104; sitemap.org</span>
+         <span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">:sitemap-filename "sitemap.org"  ;sitemap&#25991;&#20214;&#21517;</span>
+         <span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">:sitemap-title "Site"         ;sitemap&#26631;&#39064;</span>
+         <span style="color: #009e73; font-style: italic;">;:sitemap-file-entry-format "%t\t\t\t\t%d" ;sitemap&#38142;&#25509;&#39033;&#26684;&#24335;</span>
+         <span style="color: #0072b2;">:export-creator-info</span> nil    <span style="color: #009e73; font-style: italic;">;&#26159;&#21542;&#20851;&#38381;"Created by Org"</span>
+         <span style="color: #0072b2;">:export-author-info</span> nil     <span style="color: #009e73; font-style: italic;">;&#26159;&#21542;&#20851;&#38381; "Author: Your Name"</span>
+         <span style="color: #0072b2;">:auto-postamble</span> nil         <span style="color: #009e73; font-style: italic;">;&#26159;&#21542;&#20851;&#38381;&#33258;&#21160; postamble </span>
+         <span style="color: #0072b2;">:table-of-contents</span> t        <span style="color: #009e73; font-style: italic;">;&#30446;&#24405;</span>
+         <span style="color: #0072b2;">:section-numbers</span> nil        <span style="color: #009e73; font-style: italic;">;&#26159;&#21542;&#21152;&#25968;&#23383;</span>
+         <span style="color: #0072b2;">:html-postamble</span> <span style="color: #848ea9;">"&lt;p class=\"postamble\"&gt;Last Updated %d.&lt;/p&gt; "</span> 
+         <span style="color: #0072b2;">:style-include-default</span> nil  <span style="color: #009e73; font-style: italic;">;&#40664;&#35748;css&#25991;&#20214;</span>
+         <span style="color: #009e73; font-style: italic;">;:html-link-home "/sitemap.html"</span>
+         <span style="color: #009e73; font-style: italic;">;:makeindex t</span>
+         <span style="color: #0072b2;">:body-only</span> t
+        <span style="color: #56b4e9; font-weight: bold;">)</span>
+        <span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">("org-static"                ;Used to publish static files</span>
+        <span style="color: #009e73; font-style: italic;">;;  </span><span style="color: #009e73; font-style: italic;">:base-directory "/home/eric/own/website/jekyll/static/"</span>
+        <span style="color: #009e73; font-style: italic;">;;  </span><span style="color: #009e73; font-style: italic;">:base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"</span>
+        <span style="color: #009e73; font-style: italic;">;;  </span><span style="color: #009e73; font-style: italic;">:publishing-directory "/home/eric/own/html/"</span>
+        <span style="color: #009e73; font-style: italic;">;;  </span><span style="color: #009e73; font-style: italic;">:recursive t</span>
+        <span style="color: #009e73; font-style: italic;">;;  </span><span style="color: #009e73; font-style: italic;">:publishing-function org-publish-attachment</span>
+        <span style="color: #009e73; font-style: italic;">;;  </span><span style="color: #009e73; font-style: italic;">)</span>
+        <span style="color: #009e73; font-style: italic;">;; </span><span style="color: #009e73; font-style: italic;">("blog" :components ("org-notes" "org-static")) ;combine "org-static" and "org-static" into one function call</span>
+<span style="color: #56b4e9; font-weight: bold;">))</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">org书写</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+在org文件里面加入jekyll的头部信息如
+</p>
+<pre class="example">
+#+OPTIONS: toc:nil
+#+BEGIN_HTML
+---
+layout: post
+title: how_to_write_blog
+date: 2014-11-22 21:53
+excerpt: 
+categories:
+- 类别
+tags:
+- 标签
+published: true
+---
+#+END_HTML
+#+TOC: headlines 4
+</pre>
+<p>
+<code>#+OPTIONS: toc:nil</code> 表示 去掉头部信息
+</p>
+
+<p>
+<code>#+TOC: headlines 4</code> 再此加入目录信息
+</p>
+
+<p>
+可以把上面信息加到 <b>YaSnippet</b> 的 <b>org-mode</b> 上方便插入.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">发布</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+默认是C-c C-e P p
+</p>
+</div>
+</div>
+
+				</span>
+				<div class="journal-date">Published 22 November 2014</div>
+				<div class="journal-tags">
+				
+				
+	 
+		<a class="tag-cont" href="/tags.html#jekyll-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">jekyll</div>
+			<div class="tag-r"></div>
+		</a>
+	 
+		<a class="tag-cont" href="/tags.html#blog-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">blog</div>
+			<div class="tag-r"></div>
+		</a>
+	
+
+
+
+				</div>
+			</div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+</div>
+<div>
+<nav class="pagination fn-clear" id="violet-paging">
+    <div class="pagination-list">
+        
+        <a class="prev" href="/emacs/2014/10/25/emacs_config" rel="bookmark"><i class="fa fa-chevron-circle-left"></i>&lt;&lt;  emacs配置文件</a>
+        
+        
+    </div>
+</nav>
+</div>
+	<div class="clearboth"></div>
+	
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'zifeiwo'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+	<div class="clearboth"></div>
+</div>
+
+
+			</div>
+			<div class="clearboth pagebottom"></div>
+		</div>
+	</div>
+	<a href="#" class="scrollup">Scroll</a>
+	<footer>
+	<div class="footer-940">
+		<div class="footer-general-info">
+   			© 2014 zifeiwo<br>
+       		— Built
+       		in <a href="http://www.gnu.org/software/emacs/">Emacs</a>
+       		with <a href="http://orgmode.org">Org-mode</a>
+       		and <a href="http://github.com/mojombo/jekyll">Jekyll</a> <br>
+			theme by <a href="http://simpleyyt.github.io/">simpleyyt</a><br>
+		</div>
+		<div class="footer-col-cont">
+			<div class="footer-nav-col">
+				<h4><a>Categories</a></h4>
+				<ul>
+					
+					
+
+
+  
+     
+    	<li><a href="/categories.html#emacs-ref">
+    		emacs <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#linux-ref">
+    		linux <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#博客-ref">
+    		博客 <span>1</span>
+    	</a></li>
+    
+  
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Pages</a></h4>
+				<ul>
+					
+					
+					
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/about/">About</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+  
+
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Feed</a></h4>
+				<ul>
+					<li><a href="/atom.xml">Atom Feed</a></li>
+					<li><a href="/rss.xml">RSS Feed</a></li>
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Links</a></h4>
+				<ul>
+				
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a href = "/about.html">About Me</a></h4>
+				<ul>
+				 
+					<li><a href = "jwzhou0905@gmail.com">e-mail</a></li>
+				
+				</ul>
+			</div>
+			<div class="clearboth"></div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+	<div class="clearboth"></div>
+</footer>
+
+	
+
+
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F964490aa9e5f008e8e859ebf2877c63d' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+
+
+
+</body>
+</html>
+
