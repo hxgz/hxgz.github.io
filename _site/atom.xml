@@ -158,7 +158,7 @@ $(document).ready(function () {
  <title>子非我</title>
  <link href="http://www.zifeiwo.com/" rel="self"/>
  <link href="http://www.zifeiwo.com"/>
- <updated>2014-11-22T22:12:18+08:00</updated>
+ <updated>2014-11-23T12:46:32+08:00</updated>
  <id>http://www.zifeiwo.com</id>
  <author>
    <name>zifeiwo</name>
@@ -304,8 +304,17 @@ published: true
 &lt;/p&gt;
 
 &lt;p&gt;
-可以把上面信息加到 &lt;b&gt;YaSnippet&lt;/b&gt; 的 &lt;b&gt;org-mode&lt;/b&gt; 上方便插入.
+为了方便插入,可以往 &lt;b&gt;YaSnippet&lt;/b&gt; 的 &lt;b&gt;org-mode&lt;/b&gt; 加入自定义宏.如创建一个文件
+&lt;code&gt;jekyll&lt;/code&gt; 插入一下信息. 然后在org文件里输入 jekyll[tab]即可输入以上信息
 &lt;/p&gt;
+&lt;div class=&quot;org-src-container&quot;&gt;
+
+&lt;pre class=&quot;src src-lisp&quot;&gt;`&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;format &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;#+OPTIONS: toc:nil\n#+BEGIN_HTML\n---\nlayout: post\ntitle: %s\ndate: %s\nexcerpt: \ncategories:\n- \ntags:\n- \npublished: true\n---\n#+END_HTML\n#+TOC: headlines 4\n&quot;&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;file-name-base
+         &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;buffer-file-name &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;current-buffer&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;)))&lt;/span&gt;
+        &lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;(&lt;/span&gt;format-time-string &lt;span style=&quot;color: #848ea9;&quot;&gt;&quot;%Y-%m-%d %H:%M&quot;&lt;/span&gt;&lt;span style=&quot;color: #56b4e9; font-weight: bold;&quot;&gt;))&lt;/span&gt;`
+&lt;/pre&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 

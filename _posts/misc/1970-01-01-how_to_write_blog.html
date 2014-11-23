@@ -143,8 +143,17 @@ published: true
 </p>
 
 <p>
-可以把上面信息加到 <b>YaSnippet</b> 的 <b>org-mode</b> 上方便插入.
+为了方便插入,可以往 <b>YaSnippet</b> 的 <b>org-mode</b> 加入自定义宏.如创建一个文件
+<code>jekyll</code> 插入一下信息. 然后在org文件里输入 jekyll[tab]即可输入以上信息
 </p>
+<div class="org-src-container">
+
+<pre class="src src-lisp">`<span style="color: #56b4e9; font-weight: bold;">(</span>format <span style="color: #848ea9;">"#+OPTIONS: toc:nil\n#+BEGIN_HTML\n---\nlayout: post\ntitle: %s\ndate: %s\nexcerpt: \ncategories:\n- \ntags:\n- \npublished: true\n---\n#+END_HTML\n#+TOC: headlines 4\n"</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>file-name-base
+         <span style="color: #56b4e9; font-weight: bold;">(</span>buffer-file-name <span style="color: #56b4e9; font-weight: bold;">(</span>current-buffer<span style="color: #56b4e9; font-weight: bold;">)))</span>
+        <span style="color: #56b4e9; font-weight: bold;">(</span>format-time-string <span style="color: #848ea9;">"%Y-%m-%d %H:%M"</span><span style="color: #56b4e9; font-weight: bold;">))</span>`
+</pre>
+</div>
 </div>
 </div>
 
