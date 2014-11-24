@@ -82,7 +82,7 @@ $(document).ready(function () {
 				
 				  
 					
-					<li id = "About"><a href="/about/">About</a></li>
+					<li id = "关于"><a href="/about/">关于</a></li>
 					
 				  
 				
@@ -90,30 +90,8 @@ $(document).ready(function () {
 				
 				  
 					
-					<li id = "Archive"><a href="/archive.html">Archive</a></li>
+					<li id = "归档"><a href="/archive.html">归档</a></li>
 					
-				  
-				
-			 
-				
-				  
-				
-			 
-				
-				  
-					
-					<li id = "Categories"><a href="/categories.html">Categories</a></li>
-					
-				  
-				
-			 
-				
-			 
-				
-				  
-				
-			 
-				
 				  
 				
 			 
@@ -124,7 +102,29 @@ $(document).ready(function () {
 				
 				  
 					
-					<li id = "Tags"><a href="/tags.html">Tags</a></li>
+					<li id = "分类"><a href="/categories.html">分类</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "标签"><a href="/tags.html">标签</a></li>
 					
 				  
 				
@@ -158,7 +158,7 @@ $(document).ready(function () {
  <title>子非我</title>
  <link href="http://www.zifeiwo.com/" rel="self"/>
  <link href="http://www.zifeiwo.com"/>
- <updated>2014-11-23T12:46:32+08:00</updated>
+ <updated>2014-11-24T21:59:22+08:00</updated>
  <id>http://www.zifeiwo.com</id>
  <author>
    <name>zifeiwo</name>
@@ -1398,7 +1398,7 @@ toc:打开或关闭表格
     
       
       	
-      	<li><a href="/about/">About</a></li>
+      	<li><a href="/about/">关于</a></li>
       	
       
     
@@ -1406,30 +1406,8 @@ toc:打开或关闭表格
     
       
       	
-      	<li><a href="/archive.html">Archive</a></li>
+      	<li><a href="/archive.html">归档</a></li>
       	
-      
-    
-  
-    
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories.html">Categories</a></li>
-      	
-      
-    
-  
-    
-  
-    
-      
-    
-  
-    
       
     
   
@@ -1440,7 +1418,29 @@ toc:打开或关闭表格
     
       
       	
-      	<li><a href="/tags.html">Tags</a></li>
+      	<li><a href="/categories.html">分类</a></li>
+      	
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">标签</a></li>
       	
       
     
