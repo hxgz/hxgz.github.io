@@ -17,7 +17,7 @@ $(document).ready(function() {
         moreposts();
     });
     $(window).scroll(function() {
-        if ($(window).scrollTop() >= ($(document).height() - ($(window).height()))) {
+        if ($(window).scrollTop()+2 >= ($(document).height() - ($(window).height()))) {
             if (loadbutton.closest('body').length > 0) moreposts();
         }
     });
