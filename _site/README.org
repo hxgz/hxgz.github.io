@@ -1,4 +1,0 @@
-* blog
-  感谢 http://simpleyyt.github.io/ ,本blog的主题主要基于此.并在此基础上做了一些更改.
-  博客通过emacs(org-mode),jekyll生成.
-  http://www.zifeiwo.com/%E5%8D%9A%E5%AE%A2/2014/11/22/how_to_write_blog/ 这里有个介绍
