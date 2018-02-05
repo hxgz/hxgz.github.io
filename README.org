@@ -3,4 +3,4 @@
   
   博客通过emacs(org-mode),jekyll生成.
   
-  http://hxgz.github.com/%E5%8D%9A%E5%AE%A2/2014/11/22/how_to_write_blog/ 这里有个介绍
+  http://hxgz.github.io/%E5%8D%9A%E5%AE%A2/2014/11/22/how_to_write_blog/ 这里有个介绍
